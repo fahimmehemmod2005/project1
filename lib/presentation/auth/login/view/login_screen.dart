@@ -57,7 +57,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text('Save Password', style: AppStyles.size12w400()),
                     const Spacer(),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, Routes.forgotRoute);
+                      },
                       child: Text(
                         'Forgot Password?',
                         style: AppStyles.size12w400(color: Colors.amber),

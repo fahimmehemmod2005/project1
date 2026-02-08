@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/auth/changepass/view/changepass_screen.dart';
 import 'package:flutter_application_1/presentation/auth/forgot/view/forgot_screen.dart';
 import 'package:flutter_application_1/presentation/auth/login/view/login_screen.dart';
+import 'package:flutter_application_1/presentation/auth/otp/view/otp_screen.dart';
 import 'package:flutter_application_1/presentation/auth/signup/view/signup_screen.dart';
 import 'package:flutter_application_1/presentation/splash/splash_screen.dart';
 
@@ -9,6 +11,8 @@ class Routes {
   static const String loginRoute = "/loginRoute";
   static const String signupRoute = "/signupRoute";
   static const String forgotRoute = "/forgotRoute";
+  static const String otpRoute = "/otpRoute";
+  static const String changepassRoute = "/changepassRoute";
 
 }
 
@@ -23,6 +27,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const SignupScreen());
       case Routes.forgotRoute:
         return MaterialPageRoute(builder: (_) => const ForgotScreen());
+      case Routes.otpRoute:
+        return MaterialPageRoute(builder: (_) => const OtpScreen());
+      case Routes.changepassRoute:
+        return MaterialPageRoute(builder: (_) => const ChangepassScreen());
 
       default:
         return unDefineRoute();
