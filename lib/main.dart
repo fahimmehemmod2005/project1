@@ -9,6 +9,7 @@ void main() async {
   runApp(const ProviderScope(child: MyApp()));
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
