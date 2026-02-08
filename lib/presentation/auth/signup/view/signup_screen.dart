@@ -25,6 +25,7 @@ class _SignupScreenState extends State<SignupScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              10.verticalSpace,
               Center(
                 child: Text(
                   'Cryptic',
@@ -53,11 +54,13 @@ class _SignupScreenState extends State<SignupScreen> {
               TextInputField(
                 mainLabel: 'Password',
                 hintText: 'Enter Your Password',
+                obscureText: true,
               ),
               10.verticalSpace,
               TextInputField(
                 mainLabel: 'Confirm Password',
                 hintText: 'Re-Type Your Password',
+                obscureText: true,
               ),
               10.verticalSpace,
               Text('Select Roll',
