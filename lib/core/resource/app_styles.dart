@@ -55,6 +55,11 @@ class AppStyles {
     fontWeight: FontWeight.w600,
     color: color,
   );
+  static TextStyle size12w400({Color color = Colors.white}) => GoogleFonts.inter(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: color,
+  );
 }
 
 extension TextStyleExtension on TextStyle {
