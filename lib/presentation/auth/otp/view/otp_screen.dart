@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
+import 'package:flutter_application_1/presentation/widgets/helper_widget.dart';
 import 'package:flutter_application_1/presentation/widgets/primary_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
@@ -52,54 +53,51 @@ class _OtpScreenState extends State<OtpScreen> {
         centerTitle: true,
         title: Text('OTP Verification', style: AppStyles.size20w600()),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              50.verticalSpace,
-              Text('Enter OTP CODE', style: AppStyles.size20w600()),
-              Text(
-                "Please submit your 4 digit code in your email",
-                style: AppStyles.size14w600(),
-              ),
-              Text("abcd@example.com", style: AppStyles.size14w600()),
-              30.verticalSpace,
-
-              Pinput(
-                keyboardType: TextInputType.number,
-                length: 4,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                defaultPinTheme: defaultPinTheme,
-                focusedPinTheme: focusedPinTheme,
-                errorPinTheme: errorPinTheme,
-              ),
-              20.verticalSpace,
-
-              Center(
-                child: RichText(
-                    text: TextSpan(
-                      text: "Don't receive the code? ",
-                      style: AppStyles.size12w400(),
-                      children: [
-                        TextSpan(
-                          text: "resend code",
-                          style: AppStyles.size12w400(color: Colors.amber),
-                        ),
-                      ],
-                    ),
+      body: HelperWidget(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            50.verticalSpace,
+            Text('Enter OTP CODE', style: AppStyles.size20w600()),
+            Text(
+              "Please submit your 4 digit code in your email",
+              style: AppStyles.size14w600(),
+            ),
+            Text("abcd@example.com", style: AppStyles.size14w600()),
+            30.verticalSpace,
+              
+            Pinput(
+              keyboardType: TextInputType.number,
+              length: 4,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              defaultPinTheme: defaultPinTheme,
+              focusedPinTheme: focusedPinTheme,
+              errorPinTheme: errorPinTheme,
+            ),
+            20.verticalSpace,
+              
+            Center(
+              child: RichText(
+                  text: TextSpan(
+                    text: "Don't receive the code? ",
+                    style: AppStyles.size12w400(),
+                    children: [
+                      TextSpan(
+                        text: "resend code",
+                        style: AppStyles.size12w400(color: Colors.amber),
+                      ),
+                    ],
                   ),
-              ),
-
-              20.verticalSpace,
-
-              PrimaryButton(label: 'Submit', onPressed: () {
-                Navigator.pushNamed(context, Routes.changepassRoute);
-              }),
-              10.verticalSpace,
-            ],
-          ),
+                ),
+            ),
+              
+            20.verticalSpace,
+              
+            PrimaryButton(label: 'Submit', onPressed: () {
+              Navigator.pushNamed(context, Routes.changepassRoute);
+            }),
+            10.verticalSpace,
+          ],
         ),
       ),
     );

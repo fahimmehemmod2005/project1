@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
+import 'package:flutter_application_1/presentation/widgets/helper_widget.dart';
 import 'package:flutter_application_1/presentation/widgets/primary_button.dart';
 import 'package:flutter_application_1/presentation/widgets/text_input_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,76 +19,73 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-          child: Center(
-            child: Column(
-              children: [
-                130.verticalSpace,
-                Text(
-                  'Cryptic',
-                  style: GoogleFonts.playwriteAr(
-                    fontSize: 50,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
+      body: HelperWidget(
+        child: Center(
+          child: Column(
+            children: [
+              130.verticalSpace,
+              Text(
+                'Cryptic',
+                style: GoogleFonts.playwriteAr(
+                  fontSize: 50,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
                 ),
-                30.verticalSpace,
-                TextInputField(
-                  mainLabel: 'Email',
-                  hintText: 'Enter Your Email'
-                  ),
-                20.verticalSpace,
-                TextInputField(
-                  mainLabel: 'Password',
-                  hintText: 'Enter Your Password',
-                  suffixIcon: Icons.visibility_off_outlined,
-                  obscureText: true,
+              ),
+              30.verticalSpace,
+              TextInputField(
+                mainLabel: 'Email',
+                hintText: 'Enter Your Email'
                 ),
-                Row(
-                  children: [
-                    Checkbox(
-                      value: true,
-                      onChanged: (value) {},
-                      shape: CircleBorder(),
-                      checkColor: Colors.white,
-                      activeColor: Colors.amber,
+              20.verticalSpace,
+              TextInputField(
+                mainLabel: 'Password',
+                hintText: 'Enter Your Password',
+                suffixIcon: Icons.visibility_off_outlined,
+                obscureText: true,
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: true,
+                    onChanged: (value) {},
+                    shape: CircleBorder(),
+                    checkColor: Colors.white,
+                    activeColor: Colors.amber,
+                  ),
+                  Text('Save Password', style: AppStyles.size12w400()),
+                  const Spacer(),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.forgotRoute);
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: AppStyles.size12w400(color: Colors.amber),
                     ),
-                    Text('Save Password', style: AppStyles.size12w400()),
-                    const Spacer(),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, Routes.forgotRoute);
+                  ),
+                ],
+              ),
+              10.verticalSpace,
+              PrimaryButton(label: 'Login', onPressed: () {}),
+              20.verticalSpace,
+              RichText(
+                text: TextSpan(
+                  text: "Don't have an account? ",
+                  style: AppStyles.size12w400(),
+                  children: [
+                    TextSpan(
+                      text: "Sign Up",
+                      style: AppStyles.size12w400(color: Colors.amber),
+                      recognizer: TapGestureRecognizer()..onTap = () {
+                        Navigator.pushNamed(context, Routes.signupRoute);
                       },
-                      child: Text(
-                        'Forgot Password?',
-                        style: AppStyles.size12w400(color: Colors.amber),
-                      ),
                     ),
                   ],
                 ),
-                10.verticalSpace,
-                PrimaryButton(label: 'Login', onPressed: () {}),
-                20.verticalSpace,
-                RichText(
-                  text: TextSpan(
-                    text: "Don't have an account? ",
-                    style: AppStyles.size12w400(),
-                    children: [
-                      TextSpan(
-                        text: "Sign Up",
-                        style: AppStyles.size12w400(color: Colors.amber),
-                        recognizer: TapGestureRecognizer()..onTap = () {
-                          Navigator.pushNamed(context, Routes.signupRoute);
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                10.verticalSpace,
-              ],
-            ),
+              ),
+              10.verticalSpace,
+            ],
           ),
         ),
       ),

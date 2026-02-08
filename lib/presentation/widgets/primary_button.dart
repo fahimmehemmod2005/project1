@@ -16,12 +16,12 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        elevation: 10,
         backgroundColor: backgroundColor,
         minimumSize: Size(double.infinity, 50.h),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.r),
         ),
+        shadowColor: Colors.amber,elevation: 5
       ),
       onPressed: onPressed,
       child: Text(
