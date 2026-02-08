@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Quatana',
           darkTheme: ThemeData.dark(),
           themeMode: ThemeMode.dark,
           onGenerateRoute: RouteGenerator.getRoute,
