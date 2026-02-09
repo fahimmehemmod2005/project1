@@ -5,7 +5,10 @@ import 'package:flutter_application_1/presentation/auth/login/view/login_screen.
 import 'package:flutter_application_1/presentation/auth/otp/view/otp_screen.dart';
 import 'package:flutter_application_1/presentation/auth/signup/view/signup_screen.dart';
 import 'package:flutter_application_1/presentation/mainscreen/view/main_screen.dart';
+import 'package:flutter_application_1/presentation/profile/edit_profile.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_screen.dart';
+import 'package:flutter_application_1/presentation/profile/view/social_link.dart';
+import 'package:flutter_application_1/presentation/profile/view/subscriber_screen.dart';
 import 'package:flutter_application_1/presentation/splash/splash_screen.dart';
 import 'package:flutter_application_1/presentation/subscription/view/current_plan.dart';
 import 'package:flutter_application_1/presentation/subscription/view/membership_screen.dart';
@@ -25,6 +28,9 @@ class Routes {
   static const String paymentMethod = "/paymentMethod";
   static const String paymentSummary = "/paymentSummary";
   static const String profileRoute = "/profileRoute";
+  static const String editProfileRoute = "/editProfileRoute";
+  static const String socialLinkRoute = "/socialLinkRoute";
+  static const String subscriberScreen = "/subscriberScreen";
 
 }
 
@@ -55,6 +61,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const PaymentSummary());
       case Routes.profileRoute:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case Routes.editProfileRoute:
+        return MaterialPageRoute(builder: (_) => const EditProfile());
+      case Routes.socialLinkRoute:
+        return MaterialPageRoute(builder: (_) => const SocialLink());
+      case Routes.subscriberScreen:
+        return MaterialPageRoute(builder: (_) => const SubscriberScreen());
 
       default:
         return unDefineRoute();

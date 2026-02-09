@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/constansts/app_icons.dart';
 import 'package:flutter_application_1/core/constansts/app_images.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
+import 'package:flutter_application_1/core/routes/route_manager.dart';
+import 'package:flutter_application_1/presentation/widgets/primary_button.dart';
 import 'package:flutter_application_1/presentation/widgets/show_white_model_bottom_sheet.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -44,23 +46,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     20.verticalSpace,
                     Card(
-                            child: ListTile(
-                              leading: Icon(CupertinoIcons.play_rectangle_fill,color: Colors.white,),
-                              title: Text('Reels',style: AppStyles.size12w400(),),
-                            ),
-                          ),
-                          Card(
-                            child: ListTile(
-                              leading: Icon(CupertinoIcons.square_grid_2x2_fill,color: Colors.white,),
-                              title: Text('Posts',style: AppStyles.size12w400(),),
-                            ),
-                          ),
-                          Card(
-                            child: ListTile(
-                              leading: Icon(CupertinoIcons.chart_bar,color: Colors.white,),
-                              title: Text('Dashboard',style: AppStyles.size12w400(),),
-                            ),
-                          ),
+                      child: ListTile(
+                        leading: Icon(
+                          CupertinoIcons.play_rectangle_fill,
+                          color: Colors.white,
+                        ),
+                        title: Text('Reels', style: AppStyles.size12w400()),
+                      ),
+                    ),
+                    Card(
+                      child: ListTile(
+                        leading: Icon(
+                          CupertinoIcons.square_grid_2x2_fill,
+                          color: Colors.white,
+                        ),
+                        title: Text('Posts', style: AppStyles.size12w400()),
+                      ),
+                    ),
+                    Card(
+                      child: ListTile(
+                        leading: Icon(
+                          CupertinoIcons.chart_bar,
+                          color: Colors.white,
+                        ),
+                        title: Text('Dashboard', style: AppStyles.size12w400()),
+                      ),
+                    ),
                   ],
                 ),
               );
@@ -68,18 +79,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           centerTitle: true,
           title: Text(
-            'username',
-            style: TextStyle(
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
-            ),
+            'fahim2005',
+            style: AppStyles.size16w600(),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
           actions: [
             GestureDetector(
               child: Icon(CupertinoIcons.bars, color: Colors.white),
+              onTap: () {},
             ),
             10.horizontalSpace,
           ],
@@ -100,15 +108,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         width: 70.w,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: CupertinoColors.systemGrey.withAlpha(70),
-                        ),
-                        child: Center(
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              CupertinoIcons.camera_fill,
-                              color: CupertinoColors.activeOrange,
-                            ),
+                          border: Border.all(color: CupertinoColors.activeOrange,width: 2),
+                          image: DecorationImage(
+                            image: AssetImage(AppImages.user5),
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -119,14 +122,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'Account Holder Name',
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style: AppStyles.size14w600(),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'MD Fahim',
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                  style: AppStyles.size14w600(),
+                                ),
+                                5.horizontalSpace,
+                                Image.asset(AppIcons.blueCheck,height: 20,width: 20,color: CupertinoColors.activeOrange,),
+                              ],
                             ),
                             5.verticalSpace,
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Column(
                                   children: [
@@ -145,38 +157,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ],
                                 ),
                                 45.horizontalSpace,
-                                Column(
-                                  children: [
-                                    Text(
-                                      '0',
-                                      style: AppStyles.size14w600(),
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 1,
-                                    ),
-                                    Text(
-                                      'followers',
-                                      style: AppStyles.size12w400(),
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 1,
-                                    ),
-                                  ],
-                                ),
-                                45.horizontalSpace,
-                                Column(
-                                  children: [
-                                    Text(
-                                      '0',
-                                      style: AppStyles.size14w600(),
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 1,
-                                    ),
-                                    Text(
-                                      'friends',
-                                      style: AppStyles.size12w400(),
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 1,
-                                    ),
-                                  ],
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      Routes.subscriberScreen,
+                                    );
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '10',
+                                        style: AppStyles.size14w600(),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                      Text(
+                                        'subscriber',
+                                        style: AppStyles.size12w400(),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -265,55 +268,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Row(
                   children: [
                     Expanded(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: CupertinoColors.systemGrey.withAlpha(
-                            80,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0.r),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'Edit profile',
-                          style: AppStyles.size12w400(),
-                        ),
-                      ),
+                      child: PrimaryButton(
+                        label: 'Edit profile',
+                        height: 35.h,
+                        borderRadius: 5.0.r,
+                        backgroundColor: CupertinoColors.systemGrey.withAlpha(80),
+                        fontSize: 15,
+                       onPressed: (){
+                        Navigator.pushNamed(context, Routes.editProfileRoute);
+                       },
+                       )
                     ),
                     5.horizontalSpace,
                     Expanded(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: CupertinoColors.systemGrey.withAlpha(
-                            80,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0.r),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'Share profile',
-                          style: AppStyles.size12w400(),
-                        ),
-                      ),
-                    ),
-                    5.horizontalSpace,
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: CupertinoColors.systemGrey.withAlpha(
-                          80,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0.r),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: Icon(
-                        CupertinoIcons.person_fill,
-                        color: CupertinoColors.white,
-                      ),
+                      child: PrimaryButton(
+                        label: 'Share profile',
+                        height: 35.h,
+                        borderRadius: 5.0.r,
+                        backgroundColor: CupertinoColors.systemGrey.withAlpha(80),
+                        fontSize: 15,
+                       onPressed: (){}
+                       )
                     ),
                   ],
                 ),
@@ -327,7 +302,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         CupertinoIcons.square_grid_2x2,
-                        size: 30,
                         color: CupertinoColors.white,
                       ),
                     ),
@@ -335,7 +309,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         CupertinoIcons.play_rectangle_fill,
-                        size: 30,
                         color: CupertinoColors.white,
                       ),
                     ),
@@ -343,7 +316,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         CupertinoIcons.camera_on_rectangle,
-                        size: 30,
                         color: CupertinoColors.white,
                       ),
                     ),
@@ -370,19 +342,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 style: AppStyles.size16w600(),
                               ),
                               5.verticalSpace,
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: CupertinoColors.activeOrange,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.0.r),
-                                  ),
-                                ),
-                                onPressed: () {},
-                                child: Text(
-                                  'Create',
-                                  style: AppStyles.size14w400(),
-                                ),
-                              ),
+                              PrimaryButton(
+                                label: 'Create', 
+                                borderRadius: 5.0.r,
+                                height: 40,
+                                width: 50,
+                                fontSize: 15,
+                                onPressed: (){}
+                                )
                             ],
                           ),
                         ),

@@ -49,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
       body: screens[currentIndex],
       bottomNavigationBar: SafeArea(
         child: Container(
-          height: 60.h,
+          height: 65.h,
           padding:  EdgeInsets.all(10),
           decoration: BoxDecoration(
             color: CupertinoColors.systemGrey.withAlpha(30),
@@ -58,7 +58,7 @@ class _MainScreenState extends State<MainScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _navItem(CupertinoIcons.home, "Home", 0),
-              _navItem(CupertinoIcons.video_camera, "Video", 1),
+              _navItem(CupertinoIcons.videocam_circle_fill, "Video", 1),
               _navItem(CupertinoIcons.chat_bubble, "Message", 2),
               _navItem(CupertinoIcons.search, "Search", 3),
               _navItem(CupertinoIcons.profile_circled, "Profile", 4),
@@ -81,7 +81,6 @@ class _MainScreenState extends State<MainScreen> {
           Icon(
             icon,
             color: isActive ? CupertinoColors.activeOrange : CupertinoColors.systemGrey,
-            size: isActive ? 35 : 30,
           ),
         ],
       ),
