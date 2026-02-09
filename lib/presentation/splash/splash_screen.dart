@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,12 +34,12 @@ class _SplashScreenState extends State<SplashScreen> {
               'Cryptic',
               style: GoogleFonts.playwriteAr(
                 fontSize: 50,
-                color: Colors.white,
+                color: CupertinoColors.white,
                 fontWeight: FontWeight.w700,
               ),
             ),
             100.verticalSpace,
-            SpinKitCircle(color: Colors.white, size: 80),
+            SpinKitCircle(color: CupertinoColors.white, size: 80),
           ],
         ),
       ),

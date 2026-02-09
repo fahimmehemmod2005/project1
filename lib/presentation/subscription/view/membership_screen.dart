@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/constansts/app_icons.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
@@ -35,14 +36,14 @@ class _MembershipScreenState extends State<MembershipScreen> {
                   width: double.infinity,
                   padding: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: Colors.grey.withAlpha(30),
+                    color: CupertinoColors.systemGrey.withAlpha(30),
                     borderRadius: BorderRadius.circular(12.0.r),
                   ),
                   child: TabBar(
                     dividerColor: Colors.transparent,
                     indicatorSize: TabBarIndicatorSize.tab,
                     indicator: BoxDecoration(
-                      color: Colors.amber,
+                      color: CupertinoColors.activeOrange,
                       borderRadius: BorderRadius.circular(12.0.r),
                     ),
                     tabs: [
@@ -75,7 +76,7 @@ Tab customTabs({required String tabs}) {
         style: TextStyle(
           fontSize: 13.sp,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: CupertinoColors.white,
         ),
       ),
     ),
@@ -230,9 +231,9 @@ Container buildContainer({required Widget child}) {
     padding: EdgeInsets.all(15.0),
     width: double.infinity,
     decoration: BoxDecoration(
-       color: Colors.grey.withAlpha(30),
+       color: CupertinoColors.systemGrey.withAlpha(30),
       borderRadius: BorderRadius.circular(12.0.r),
-      border: Border.all(color: Colors.amber, width: 0.5),
+      border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
     ),
     child: child,
   );
@@ -241,7 +242,7 @@ Container buildContainer({required Widget child}) {
 Row buildRow({required String text}) {
   return Row(
     children: [
-      Image.asset(AppIcons.check, color: Colors.white),
+      Image.asset(AppIcons.check, color: CupertinoColors.white),
       10.horizontalSpace,
       Text(text, style: AppStyles.size14w400()),
     ],

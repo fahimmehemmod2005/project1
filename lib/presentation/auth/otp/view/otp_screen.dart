@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
@@ -22,12 +23,12 @@ class _OtpScreenState extends State<OtpScreen> {
       textStyle: TextStyle(
         fontSize: 32.sp,
         fontWeight: FontWeight.w500,
-        color: Colors.white,
+        color: CupertinoColors.white,
       ),
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(12.0.r),
-        border: Border.all(color: Colors.grey, width: 0.5),
+        border: Border.all(color: CupertinoColors.systemGrey, width: 0.5),
       ),
     );
 
@@ -35,14 +36,14 @@ class _OtpScreenState extends State<OtpScreen> {
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(12.0.r),
-        border: Border.all(color: Colors.amber, width: 0.5),
+        border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
       ),
     );
 
     final errorPinTheme = defaultPinTheme.copyWith(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0.r),
-        border: Border.all(color: Colors.red, width: 0.5),
+        border: Border.all(color: CupertinoColors.systemRed, width: 0.5),
       ),
     );
 
@@ -84,7 +85,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     children: [
                       TextSpan(
                         text: "resend code",
-                        style: AppStyles.size12w400(color: Colors.amber),
+                        style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
                       ),
                     ],
                   ),

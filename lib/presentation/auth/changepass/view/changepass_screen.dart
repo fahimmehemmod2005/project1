@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
@@ -37,11 +38,13 @@ class _ChangepassScreenState extends State<ChangepassScreen> {
              TextInputField(
               mainLabel: 'Password',
               hintText: 'Enter a password',
+              suffixIcon: CupertinoIcons.eye,
              ),
              10.verticalSpace,
              TextInputField(
               mainLabel: 'Confirm Password',
               hintText: 'Re-type password',
+              suffixIcon: CupertinoIcons.eye,
              ),
              30.verticalSpace,
              PrimaryButton(label: 'Change Password', onPressed: (){

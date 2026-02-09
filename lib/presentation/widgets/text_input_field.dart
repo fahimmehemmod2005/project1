@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +30,7 @@ class TextInputField extends StatelessWidget {
             style: TextStyle(
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
-              color: Colors.white,
+              color: CupertinoColors.white,
             ),
           ),
         5.verticalSpace,
@@ -37,9 +38,9 @@ class TextInputField extends StatelessWidget {
           maxLines: maxLines,
           minLines: maxLines,
           obscureText: obscureText,
-          cursorColor: Colors.white,
+          cursorColor: CupertinoColors.white,
           style: TextStyle(
-            color: Colors.white,
+            color: CupertinoColors.white,
             fontSize: 16.sp,
             fontWeight: FontWeight.w500,
           ),
@@ -47,19 +48,19 @@ class TextInputField extends StatelessWidget {
             suffixIcon: Icon(suffixIcon),
             hintText: hintText,
             hintStyle: TextStyle(
-              color: Colors.grey,
+              color: CupertinoColors.systemGrey,
               fontSize: 13.sp,
               fontWeight: FontWeight.w500,
             ),
-            fillColor: Colors.grey.withAlpha(50),
+            fillColor: CupertinoColors.systemGrey.withAlpha(30),
             filled: true,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(color: Colors.white, width: 0.5),
+              borderSide: BorderSide(color: CupertinoColors.white, width: 0.5),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(color: Colors.amber, width: 0.5),
+              borderSide: BorderSide(color: CupertinoColors.activeOrange, width: 0.5),
             )
           ),
         ),

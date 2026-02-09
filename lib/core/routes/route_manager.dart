@@ -5,10 +5,12 @@ import 'package:flutter_application_1/presentation/auth/login/view/login_screen.
 import 'package:flutter_application_1/presentation/auth/otp/view/otp_screen.dart';
 import 'package:flutter_application_1/presentation/auth/signup/view/signup_screen.dart';
 import 'package:flutter_application_1/presentation/mainscreen/view/main_screen.dart';
+import 'package:flutter_application_1/presentation/profile/view/profile_screen.dart';
 import 'package:flutter_application_1/presentation/splash/splash_screen.dart';
 import 'package:flutter_application_1/presentation/subscription/view/current_plan.dart';
 import 'package:flutter_application_1/presentation/subscription/view/membership_screen.dart';
 import 'package:flutter_application_1/presentation/subscription/view/payment_method.dart';
+import 'package:flutter_application_1/presentation/subscription/view/payment_summary.dart';
 
 class Routes {
   static const String splashRoute = "/splash";
@@ -21,6 +23,8 @@ class Routes {
   static const String membershipRoute = "/membershipRoute";
   static const String currentPlanRoute = "/currentPlanRoute";
   static const String paymentMethod = "/paymentMethod";
+  static const String paymentSummary = "/paymentSummary";
+  static const String profileRoute = "/profileRoute";
 
 }
 
@@ -47,6 +51,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const CurrentPlan());
       case Routes.paymentMethod:
         return MaterialPageRoute(builder: (_) => const PaymentMethod());
+      case Routes.paymentSummary:
+        return MaterialPageRoute(builder: (_) => const PaymentSummary());
+      case Routes.profileRoute:
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
 
       default:
         return unDefineRoute();

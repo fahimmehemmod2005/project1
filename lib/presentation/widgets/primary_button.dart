@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,7 +10,7 @@ class PrimaryButton extends StatelessWidget {
     super.key,
     required this.label,
     required this.onPressed,
-    this.backgroundColor = Colors.amber,
+    this.backgroundColor = CupertinoColors.activeOrange,
   });
 
   @override
@@ -21,7 +22,7 @@ class PrimaryButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.r),
         ),
-        shadowColor: Colors.amber,elevation: 5
+        shadowColor: CupertinoColors.activeOrange,elevation: 5
       ),
       onPressed: onPressed,
       child: Text(

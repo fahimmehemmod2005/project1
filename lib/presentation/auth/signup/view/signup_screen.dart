@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
@@ -30,7 +31,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 'Cryptic',
                 style: GoogleFonts.playwriteAr(
                   fontSize: 50,
-                  color: Colors.white,
+                  color: CupertinoColors.white,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -53,12 +54,14 @@ class _SignupScreenState extends State<SignupScreen> {
             TextInputField(
               mainLabel: 'Password',
               hintText: 'Enter Your Password',
+              suffixIcon: CupertinoIcons.eye,
               obscureText: true,
             ),
             10.verticalSpace,
             TextInputField(
               mainLabel: 'Confirm Password',
               hintText: 'Re-Type Your Password',
+              suffixIcon: CupertinoIcons.eye,
               obscureText: true,
             ),
             10.verticalSpace,
@@ -66,7 +69,7 @@ class _SignupScreenState extends State<SignupScreen> {
           style: TextStyle(
             fontSize: 12.sp,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: CupertinoColors.white,
           ),),
             5.verticalSpace,
             Row(
@@ -76,8 +79,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 50.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.grey.withAlpha(30),
-                      border: Border.all(color: Colors.amber, width: 0.5),
+                      color: CupertinoColors.systemGrey.withAlpha(30),
+                      border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
                       borderRadius: BorderRadius.circular(12.r)
                     ),
                     child: Center(child: Text('Creator',style: AppStyles.size14w400(),)),
@@ -89,7 +92,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: 50.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.grey.withAlpha(30),
+                      color: CupertinoColors.systemGrey.withAlpha(30),
                       border: Border.all(color: Colors.white, width: 0.5),
                       borderRadius: BorderRadius.circular(12.r)
                     ),
@@ -104,8 +107,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     value: true,
                     onChanged: (value) {},
                     shape: CircleBorder(),
-                    checkColor: Colors.white,
-                    activeColor: Colors.amber,
+                    checkColor: CupertinoColors.white,
+                    activeColor: CupertinoColors.activeOrange,
                   ),
                   RichText(
                 text: TextSpan(
@@ -114,7 +117,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     TextSpan(
                       text: "Terms and condition",
-                      style: AppStyles.size12w400(color: Colors.amber),
+                      style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
                       recognizer: TapGestureRecognizer()..onTap = () {},
                     ),
                   ],
@@ -134,7 +137,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     children: [
                       TextSpan(
                         text: "Login",
-                        style: AppStyles.size12w400(color: Colors.amber),
+                        style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
                         recognizer: TapGestureRecognizer()..onTap = () {
                           Navigator.pushNamed(context, Routes.loginRoute);
                         },

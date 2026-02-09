@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
@@ -28,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 'Cryptic',
                 style: GoogleFonts.playwriteAr(
                   fontSize: 50,
-                  color: Colors.white,
+                  color: CupertinoColors.white,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -41,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextInputField(
                 mainLabel: 'Password',
                 hintText: 'Enter Your Password',
-                suffixIcon: Icons.visibility_off_outlined,
+                suffixIcon: CupertinoIcons.eye,
                 obscureText: true,
               ),
               Row(
@@ -51,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onChanged: (value) {},
                     shape: CircleBorder(),
                     checkColor: Colors.white,
-                    activeColor: Colors.amber,
+                    activeColor: CupertinoColors.activeOrange,
                   ),
                   Text('Save Password', style: AppStyles.size12w400()),
                   const Spacer(),
@@ -61,13 +62,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Text(
                       'Forgot Password?',
-                      style: AppStyles.size12w400(color: Colors.amber),
+                      style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
                     ),
                   ),
                 ],
               ),
               10.verticalSpace,
-              PrimaryButton(label: 'Login', onPressed: () {}),
+              PrimaryButton(label: 'Login', onPressed: () {
+                Navigator.pushNamed(context, Routes.mainScreenRoute);
+              }),
               20.verticalSpace,
               RichText(
                 text: TextSpan(
@@ -76,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     TextSpan(
                       text: "Sign Up",
-                      style: AppStyles.size12w400(color: Colors.amber),
+                      style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
                       recognizer: TapGestureRecognizer()..onTap = () {
                         Navigator.pushNamed(context, Routes.signupRoute);
                       },
