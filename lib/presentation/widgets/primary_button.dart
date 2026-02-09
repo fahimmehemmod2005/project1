@@ -6,11 +6,21 @@ class PrimaryButton extends StatelessWidget {
   final String label;
   final VoidCallback onPressed;
   final Color? backgroundColor;
+  final Color borderColor;
+  final double? borderRadius;
+  final double? height;
+  final double? width;
+  final double? fontSize;
+
   const PrimaryButton({
     super.key,
     required this.label,
     required this.onPressed,
-    this.backgroundColor = CupertinoColors.activeOrange,
+    this.backgroundColor = CupertinoColors.activeOrange, 
+    this.borderColor = CupertinoColors.transparent, 
+    this.borderRadius,
+     this.height, 
+     this.width, this.fontSize, 
   });
 
   @override
@@ -18,18 +28,18 @@ class PrimaryButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor,
-        minimumSize: Size(double.infinity, 50.h),
+        minimumSize: Size(width ?? double.infinity, height ?? 50.h),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+          side: BorderSide(color: borderColor,width: 1)
         ),
-        shadowColor: CupertinoColors.activeOrange,elevation: 5
       ),
       onPressed: onPressed,
       child: Text(
         label,
         style: TextStyle(
-          color: Colors.white,
-          fontSize: 15.sp,
+          color: CupertinoColors.white,
+          fontSize: fontSize ?? 15.sp,
           fontWeight: FontWeight.w500,
         ),
       ),

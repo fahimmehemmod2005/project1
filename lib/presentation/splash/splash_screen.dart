@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Text(
               'Cryptic',
               style: GoogleFonts.playwriteAr(
-                fontSize: 50,
+                fontSize: 50.sp,
                 color: CupertinoColors.white,
                 fontWeight: FontWeight.w700,
               ),

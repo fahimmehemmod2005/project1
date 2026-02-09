@@ -4,13 +4,19 @@ import 'package:flutter_application_1/presentation/auth/forgot/view/forgot_scree
 import 'package:flutter_application_1/presentation/auth/login/view/login_screen.dart';
 import 'package:flutter_application_1/presentation/auth/otp/view/otp_screen.dart';
 import 'package:flutter_application_1/presentation/auth/signup/view/signup_screen.dart';
+import 'package:flutter_application_1/presentation/home/view/home_screen.dart';
 import 'package:flutter_application_1/presentation/mainscreen/view/main_screen.dart';
+import 'package:flutter_application_1/presentation/profile/edit_profile.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_screen.dart';
+import 'package:flutter_application_1/presentation/profile/view/profile_settings.dart';
+import 'package:flutter_application_1/presentation/profile/view/social_link.dart';
+import 'package:flutter_application_1/presentation/profile/view/subscriber_screen.dart';
 import 'package:flutter_application_1/presentation/splash/splash_screen.dart';
 import 'package:flutter_application_1/presentation/subscription/view/current_plan.dart';
 import 'package:flutter_application_1/presentation/subscription/view/membership_screen.dart';
 import 'package:flutter_application_1/presentation/subscription/view/payment_method.dart';
 import 'package:flutter_application_1/presentation/subscription/view/payment_summary.dart';
+import 'package:flutter_application_1/presentation/video/view/video_screen.dart';
 
 class Routes {
   static const String splashRoute = "/splash";
@@ -25,7 +31,12 @@ class Routes {
   static const String paymentMethod = "/paymentMethod";
   static const String paymentSummary = "/paymentSummary";
   static const String profileRoute = "/profileRoute";
-
+  static const String editProfileRoute = "/editProfileRoute";
+  static const String socialLinkRoute = "/socialLinkRoute";
+  static const String subscriberScreen = "/subscriberScreen";
+  static const String profileSettings = "/profileSettings";
+  static const String homeRoute = "/homeRoute";
+  static const String videoScreen = "/videoScreen";
 }
 
 class RouteGenerator {
@@ -55,6 +66,18 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const PaymentSummary());
       case Routes.profileRoute:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case Routes.editProfileRoute:
+        return MaterialPageRoute(builder: (_) => const EditProfile());
+      case Routes.socialLinkRoute:
+        return MaterialPageRoute(builder: (_) => const SocialLink());
+      case Routes.subscriberScreen:
+        return MaterialPageRoute(builder: (_) => const SubscriberScreen());
+      case Routes.profileSettings:
+        return MaterialPageRoute(builder: (_) => const ProfileSettings());
+      case Routes.homeRoute:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case Routes.videoScreen:
+        return MaterialPageRoute(builder: (_) => const VideoScreen());
 
       default:
         return unDefineRoute();

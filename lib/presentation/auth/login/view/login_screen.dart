@@ -68,7 +68,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               10.verticalSpace,
-              PrimaryButton(label: 'Login', onPressed: () {
+              PrimaryButton(
+                label: 'Login', 
+              onPressed: () {
                 Navigator.pushNamed(context, Routes.mainScreenRoute);
               }),
               20.verticalSpace,
