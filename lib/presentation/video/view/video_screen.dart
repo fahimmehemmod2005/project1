@@ -112,7 +112,6 @@ class _VideoScreenState extends State<VideoScreen> {
                   ),
                 ),
                 // Right side icons (like, comment, share)
-                
                 Positioned(
                   bottom: 80,
                   right: 10,
