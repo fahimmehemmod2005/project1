@@ -91,7 +91,7 @@ class _CurrentPlanState extends State<CurrentPlan> {
                           label: 'Change Plan',
                           fontSize: 12.sp,
                           backgroundColor: CupertinoColors.black.withAlpha(30),
-                          borderColor: CupertinoColors.activeOrange,
+                          borderColor: CupertinoColors.systemPurple,
                           height: 35.h,
                           onPressed: () {
                             Navigator.pushNamed(
@@ -188,7 +188,7 @@ Container buildContainer({required Widget child}) {
     decoration: BoxDecoration(
       color: CupertinoColors.systemGrey.withAlpha(30),
       borderRadius: BorderRadius.circular(12.0.r),
-      border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+      border: Border.all(color: CupertinoColors.systemPurple, width: 0.5),
     ),
     child: child,
   );

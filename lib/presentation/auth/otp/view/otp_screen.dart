@@ -36,7 +36,7 @@ class _OtpScreenState extends State<OtpScreen> {
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(12.0.r),
-        border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+        border: Border.all(color: CupertinoColors.systemPurple, width: 0.5),
       ),
     );
 
@@ -85,7 +85,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     children: [
                       TextSpan(
                         text: "resend code",
-                        style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
+                        style: AppStyles.size12w400(color: CupertinoColors.systemPurple),
                       ),
                     ],
                   ),

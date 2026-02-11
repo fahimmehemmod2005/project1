@@ -33,7 +33,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
               padding: EdgeInsets.all(12.0.w),
               decoration: BoxDecoration(
                  color: CupertinoColors.systemGrey.withAlpha(30),
-                border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+                border: Border.all(color: CupertinoColors.systemPurple, width: 0.5),
                 borderRadius: BorderRadius.circular(12.0.r),
               ),
               child: Column(
@@ -44,7 +44,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
-                      color: CupertinoColors.activeOrange,
+                      color: CupertinoColors.systemPurple,
                     ),
                   ),
                   15.verticalSpace,
@@ -69,7 +69,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
-                          color: CupertinoColors.activeOrange,
+                          color: CupertinoColors.systemPurple,
                         ),
                       ),
                     ],
@@ -83,7 +83,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
               width: double.infinity,
               decoration: BoxDecoration(
                 color: CupertinoColors.systemGrey.withAlpha(30),
-                border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+                border: Border.all(color: CupertinoColors.systemPurple, width: 0.5),
                 borderRadius: BorderRadius.circular(12.0.r),
               ),
               child: ListTile(
@@ -100,7 +100,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 trailing: Text(
                   'Change',
                   style: TextStyle(
-                    color: CupertinoColors.activeOrange,
+                    color: CupertinoColors.systemPurple,
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                   ),

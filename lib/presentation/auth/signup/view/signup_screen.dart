@@ -29,7 +29,7 @@ class _SignupScreenState extends State<SignupScreen> {
             Center(
               child: Text(
                 'Cryptic',
-                style: GoogleFonts.playwriteAr(
+                style: TextStyle(
                   fontSize: 50,
                   color: CupertinoColors.white,
                   fontWeight: FontWeight.w700,
@@ -80,7 +80,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: CupertinoColors.systemGrey.withAlpha(30),
-                      border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+                      border: Border.all(color: CupertinoColors.systemPurple, width: 0.5),
                       borderRadius: BorderRadius.circular(12.r)
                     ),
                     child: Center(child: Text('Creator',style: AppStyles.size14w400(),)),
@@ -108,7 +108,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     onChanged: (value) {},
                     shape: CircleBorder(),
                     checkColor: CupertinoColors.white,
-                    activeColor: CupertinoColors.activeOrange,
+                    activeColor: CupertinoColors.systemPurple,
                   ),
                   RichText(
                 text: TextSpan(
@@ -117,7 +117,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     TextSpan(
                       text: "Terms and condition",
-                      style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
+                      style: AppStyles.size12w400(color: CupertinoColors.systemPurple),
                       recognizer: TapGestureRecognizer()..onTap = () {},
                     ),
                   ],
@@ -137,7 +137,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     children: [
                       TextSpan(
                         text: "Login",
-                        style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
+                        style: AppStyles.size12w400(color: CupertinoColors.systemPurple),
                         recognizer: TapGestureRecognizer()..onTap = () {
                           Navigator.pushNamed(context, Routes.loginRoute);
                         },

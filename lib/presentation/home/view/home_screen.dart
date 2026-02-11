@@ -27,128 +27,143 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Text(
-                    'Cryptic',
-                    style: GoogleFonts.playwriteAr(
-                      fontSize: 15.0.sp,
-                      color: CupertinoColors.white,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const Spacer(),
-                  GestureDetector(
-                    child: Container(
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: CupertinoColors.activeOrange,
-                          width: 0.5,
-                        ),
-                        borderRadius: BorderRadius.circular(12.0.r),
-                      ),
-                      child: Text('Pro', style: AppStyles.size12w400()),
-                    ),
-                    onTap: () {
-                      Navigator.pushNamed(context, Routes.currentPlanRoute);
-                    },
-                  ),
-                  10.horizontalSpace,
-                  GestureDetector(
-                    child: Icon(CupertinoIcons.bell, size: 25.0),
-                    onTap: () {},
-                  ),
-                ],
-              ),
-              15.verticalSpace,
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    children: [
-                      GestureDetector(
-                        child: Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            Container(
-                              height: 60.h,
-                              width: 60.w,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                image: DecorationImage(
-                                  image: AssetImage(AppImages.user5),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              bottom: 0,
-                              right: 0,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: CupertinoColors.white,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  CupertinoIcons.add,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        onTap: () {},
-                      ),
-                      Text('your story', style: AppStyles.size12w400()),
-                    ],
-                  ),
-                  10.horizontalSpace,
-                  Expanded(
-                    child: SizedBox(
-                      height: 100.h,
-                      child: ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        physics: const BouncingScrollPhysics(),
-                        itemCount: story.length,
-                        separatorBuilder: (_, __) => 10.horizontalSpace,
-                        itemBuilder: (context, index) {
-                          final allstory = story[index];
-                          return storyCard(
-                            image: allstory['image'],
-                            name: allstory['name'],
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              10.verticalSpace,
-              ListView.separated(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 1,
-                separatorBuilder: (context, index) => 10.verticalSpace,
-                itemBuilder: (context, index) {
-                  return PhotosCard(
-                    profile: AppImages.user6,
-                    name: 'Alex',
-                    title: 'This is nature',
-                    photo:
-                        'https://i.pinimg.com/736x/11/30/cd/1130cd70d2cf986ea0d23341c9249ce5.jpg',
-                    like: '12.5K',
-                    comment: '450',
-                    share: "1k",
-                  );
-                },
-              ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF1a1625), // Dark purple-black
+              Color(0xFF0d0a15), // Deep black
+              Color(0xFF1e1433), // Dark purple
+              Color(0xFF0a0812), // Very dark black
             ],
+            stops: [0.0, 0.3, 0.7, 1.0],
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      'Cryptic',
+                      style: TextStyle(
+                        fontSize: 15.0.sp,
+                        color: CupertinoColors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const Spacer(),
+                    GestureDetector(
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: CupertinoColors.systemPurple,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(12.0.r),
+                        ),
+                        child: Text('Pro', style: AppStyles.size12w400()),
+                      ),
+                      onTap: () {
+                        Navigator.pushNamed(context, Routes.currentPlanRoute);
+                      },
+                    ),
+                    10.horizontalSpace,
+                    GestureDetector(
+                      child: Icon(CupertinoIcons.bell, size: 25.0),
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+                15.verticalSpace,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        GestureDetector(
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            children: [
+                              Container(
+                                height: 60.h,
+                                width: 60.w,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                    image: AssetImage(AppImages.user5),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                bottom: 0,
+                                right: 0,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: CupertinoColors.white,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    CupertinoIcons.add,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          onTap: () {},
+                        ),
+                        Text('your story', style: AppStyles.size12w400()),
+                      ],
+                    ),
+                    10.horizontalSpace,
+                    Expanded(
+                      child: SizedBox(
+                        height: 100.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          physics: const BouncingScrollPhysics(),
+                          itemCount: story.length,
+                          separatorBuilder: (_, __) => 10.horizontalSpace,
+                          itemBuilder: (context, index) {
+                            final allstory = story[index];
+                            return storyCard(
+                              image: allstory['image'],
+                              name: allstory['name'],
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                10.verticalSpace,
+                ListView.separated(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: 1,
+                  separatorBuilder: (context, index) => 10.verticalSpace,
+                  itemBuilder: (context, index) {
+                    return PhotosCard(
+                      profile: AppImages.user6,
+                      name: 'Alex',
+                      title: 'This is nature',
+                      photo:
+                          'https://i.pinimg.com/736x/11/30/cd/1130cd70d2cf986ea0d23341c9249ce5.jpg',
+                      like: '12.5K',
+                      comment: '450',
+                      share: "1k",
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -180,7 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: CupertinoColors.activeOrange,
+                color: CupertinoColors.systemPurple,
                 width: 2.0.w,
               ),
               image: DecorationImage(

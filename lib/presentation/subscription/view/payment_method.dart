@@ -32,7 +32,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
               padding: EdgeInsets.all(15.0.w),
               decoration: BoxDecoration(
                  color: CupertinoColors.systemGrey.withAlpha(30),
-                border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+                border: Border.all(color: CupertinoColors.systemPurple, width: 0.5),
                 borderRadius: BorderRadius.circular(12.0.r),
               ),
               child: Row(
@@ -51,7 +51,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
               padding: EdgeInsets.all(15.0.w),
               decoration: BoxDecoration(
                  color: CupertinoColors.systemGrey.withAlpha(30),
-                border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+                border: Border.all(color: CupertinoColors.systemPurple, width: 0.5),
                 borderRadius: BorderRadius.circular(12.0.r),
               ),
               child: Row(
@@ -70,7 +70,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
               padding: EdgeInsets.all(15.0.w),
               decoration: BoxDecoration(
                  color: CupertinoColors.systemGrey.withAlpha(30),
-                border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+                border: Border.all(color: CupertinoColors.systemPurple, width: 0.5),
                 borderRadius: BorderRadius.circular(12.0.r),
               ),
               child: Row(

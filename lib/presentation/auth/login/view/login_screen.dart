@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
               130.verticalSpace,
               Text(
                 'Cryptic',
-                style: GoogleFonts.playwriteAr(
+                style: TextStyle(
                   fontSize: 50,
                   color: CupertinoColors.white,
                   fontWeight: FontWeight.w700,
@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onChanged: (value) {},
                     shape: CircleBorder(),
                     checkColor: Colors.white,
-                    activeColor: CupertinoColors.activeOrange,
+                    activeColor: CupertinoColors.systemPurple,
                   ),
                   Text('Save Password', style: AppStyles.size12w400()),
                   const Spacer(),
@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Text(
                       'Forgot Password?',
-                      style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
+                      style: AppStyles.size12w400(color: CupertinoColors.systemPurple),
                     ),
                   ),
                 ],
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     TextSpan(
                       text: "Sign Up",
-                      style: AppStyles.size12w400(color: CupertinoColors.activeOrange),
+                      style: AppStyles.size12w400(color: CupertinoColors.systemPurple),
                       recognizer: TapGestureRecognizer()..onTap = () {
                         Navigator.pushNamed(context, Routes.signupRoute);
                       },

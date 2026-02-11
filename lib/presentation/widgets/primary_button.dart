@@ -16,7 +16,7 @@ class PrimaryButton extends StatelessWidget {
     super.key,
     required this.label,
     required this.onPressed,
-    this.backgroundColor = CupertinoColors.activeOrange, 
+    this.backgroundColor = CupertinoColors.systemPurple,
     this.borderColor = CupertinoColors.transparent, 
     this.borderRadius,
      this.height, 

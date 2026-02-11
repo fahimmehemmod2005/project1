@@ -60,7 +60,7 @@ class TextInputField extends StatelessWidget {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12.r),
-              borderSide: BorderSide(color: CupertinoColors.activeOrange, width: 0.5),
+              borderSide: BorderSide(color: CupertinoColors.systemPurple, width: 0.5),
             )
           ),
         ),

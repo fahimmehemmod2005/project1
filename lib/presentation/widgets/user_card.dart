@@ -46,7 +46,7 @@ class UserCard extends StatelessWidget {
         trailing: ElevatedButton(
           style: ElevatedButton.styleFrom(
             minimumSize: Size(40, 30),
-            backgroundColor: CupertinoColors.activeOrange,
+            backgroundColor: CupertinoColors.systemPurple,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0.r),
             ),

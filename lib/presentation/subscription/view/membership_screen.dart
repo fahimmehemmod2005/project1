@@ -27,37 +27,54 @@ class _MembershipScreenState extends State<MembershipScreen> {
           title: Text('Choose Plan', style: AppStyles.size20w600()),
         ),
         body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-            child: Column(
-              children: [
-                Container(
-                  height: 50.h,
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: CupertinoColors.systemGrey.withAlpha(30),
-                    borderRadius: BorderRadius.circular(12.0.r),
-                  ),
-                  child: TabBar(
-                    dividerColor: Colors.transparent,
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    indicator: BoxDecoration(
-                      color: CupertinoColors.activeOrange,
+          child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFF1a1625), // Dark purple-black
+                  Color(0xFF0d0a15), // Deep black
+                  Color(0xFF1e1433), // Dark purple
+                  Color(0xFF0a0812), // Very dark black
+                ],
+                stops: [0.0, 0.3, 0.7, 1.0],
+              ),
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+              child: Column(
+                children: [
+                  Container(
+                    height: 50.h,
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: CupertinoColors.systemGrey.withAlpha(30),
                       borderRadius: BorderRadius.circular(12.0.r),
                     ),
-                    tabs: [
-                      customTabs(tabs: 'Free'),
-                      customTabs(tabs: 'Monthly'),
-                      customTabs(tabs: 'Yearly'),
-                    ],
+                    child: TabBar(
+                      dividerColor: Colors.transparent,
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      indicator: BoxDecoration(
+                        color: CupertinoColors.systemPurple,
+                        borderRadius: BorderRadius.circular(12.0.r),
+                      ),
+                      tabs: [
+                        customTabs(tabs: 'Free'),
+                        customTabs(tabs: 'Monthly'),
+                        customTabs(tabs: 'Yearly'),
+                      ],
+                    ),
                   ),
-                ),
-                20.verticalSpace,
-                Expanded(
-                  child: TabBarView(children: [Free(), Monthly(), Yearly()]),
-                ),
-              ],
+                  20.verticalSpace,
+                  Expanded(
+                    child: TabBarView(children: [Free(), Monthly(), Yearly()]),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -230,10 +247,19 @@ Container buildContainer({required Widget child}) {
   return Container(
     padding: EdgeInsets.all(15.0),
     width: double.infinity,
+    height: double.infinity,
     decoration: BoxDecoration(
-       color: CupertinoColors.systemGrey.withAlpha(30),
-      borderRadius: BorderRadius.circular(12.0.r),
-      border: Border.all(color: CupertinoColors.activeOrange, width: 0.5),
+      gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [
+          Color(0xFF1a1625), // Dark purple-black
+          Color(0xFF0d0a15), // Deep black
+          Color(0xFF1e1433), // Dark purple
+          Color(0xFF0a0812), // Very dark black
+        ],
+        stops: [0.0, 0.3, 0.7, 1.0],
+      ),
     ),
     child: child,
   );

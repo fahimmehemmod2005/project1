@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/constansts/app_icons.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -26,21 +27,35 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Cryptic',
-              style: GoogleFonts.playwriteAr(
-                fontSize: 50.sp,
-                color: CupertinoColors.white,
-                fontWeight: FontWeight.w700,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF1a1625), // Dark purple-black
+              Color(0xFF0d0a15), // Deep black
+              Color(0xFF1e1433), // Dark purple
+              Color(0xFF0a0812), // Very dark black
+            ],
+            stops: [0.0, 0.3, 0.7, 1.0],
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(AppIcons.logo,height: 100.h,width: 100.w),
+              Text(
+                'Cryptic',
+                style: TextStyle(
+                  fontSize: 50,
+                  color: CupertinoColors.white,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
-            ),
-            100.verticalSpace,
-            SpinKitCircle(color: CupertinoColors.white, size: 80),
-          ],
+            ],
+          ),
         ),
       ),
     );

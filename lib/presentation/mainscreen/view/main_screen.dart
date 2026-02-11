@@ -78,14 +78,14 @@ class _MainScreenState extends State<MainScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
           color: isActive
-              ? CupertinoColors.activeOrange.withOpacity(0.18)
+              ? CupertinoColors.systemPurple.withOpacity(0.18)
               : Colors.transparent,
         ),
         child: Icon(
           icon,
           size: 30,
           color: isActive
-              ? CupertinoColors.activeOrange
+              ? CupertinoColors.systemPurple
               : Colors.white.withOpacity(0.7),
         ),
       ),
