@@ -11,4 +11,5 @@ class AppImages {
   static const String noPost1 = 'assets/images/nopost1.png';
   static const String noPost2 = 'assets/images/nopost2.png';
   static const String noPost3 = 'assets/images/nopost3.png';
+  static const String cover = 'assets/images/cover.jpg';
 }

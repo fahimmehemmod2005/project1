@@ -19,6 +19,8 @@ class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
@@ -105,11 +107,14 @@ class _EditProfileState extends State<EditProfile> {
             10.verticalSpace,
             Text('Select Gender', style: AppStyles.size12w400()),
             5.verticalSpace,
-            Card(
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white,width: 0.5),
+                borderRadius: BorderRadius.circular(10.0.r)
+              ),
               child: ListTile(
                 title: Text('Male', style: AppStyles.size14w600()),
                 onTap: () {
-                  //Navigator.pushNamed(context, Routes.genderRoute);
                   showCupertinoModalPopup(
                     context: context,
                     builder: (context) {

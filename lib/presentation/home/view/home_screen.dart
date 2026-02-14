@@ -5,7 +5,6 @@ import 'package:flutter_application_1/core/constansts/app_images.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -178,6 +177,9 @@ class _HomeScreenState extends State<HomeScreen> {
             CupertinoContextMenuAction(
               trailingIcon: CupertinoIcons.profile_circled,
               child: Text('Profile', style: AppStyles.size12w400()),
+              onPressed: (){
+                Navigator.pop(context);
+                Navigator.pushNamed(context, Routes.searchUserProfile);},
             ),
             CupertinoContextMenuAction(
               trailingIcon: CupertinoIcons.chat_bubble,
@@ -301,6 +303,7 @@ class PhotosCard extends StatelessWidget {
                 CupertinoContextMenuAction(
                   trailingIcon: CupertinoIcons.profile_circled,
                   child: Text('Profile', style: AppStyles.size12w400()),
+                  onPressed: (){Navigator.pushNamed(context, Routes.searchUserProfile);},
                 ),
                 CupertinoContextMenuAction(
                   trailingIcon: CupertinoIcons.chat_bubble,

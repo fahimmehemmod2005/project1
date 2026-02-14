@@ -8,7 +8,6 @@ import 'package:flutter_application_1/presentation/widgets/primary_button.dart';
 import 'package:flutter_application_1/presentation/widgets/text_input_field.dart';
 import 'package:flutter_application_1/presentation/widgets/widget_country_picker_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

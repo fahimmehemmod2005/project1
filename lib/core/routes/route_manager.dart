@@ -4,13 +4,24 @@ import 'package:flutter_application_1/presentation/auth/forgot/view/forgot_scree
 import 'package:flutter_application_1/presentation/auth/login/view/login_screen.dart';
 import 'package:flutter_application_1/presentation/auth/otp/view/otp_screen.dart';
 import 'package:flutter_application_1/presentation/auth/signup/view/signup_screen.dart';
+import 'package:flutter_application_1/presentation/boardcast/view/add_people.dart';
+import 'package:flutter_application_1/presentation/boardcast/view/create_channel.dart';
+import 'package:flutter_application_1/presentation/boardcast/view/my_channels.dart';
+import 'package:flutter_application_1/presentation/boardcast/view/public_channels.dart';
+import 'package:flutter_application_1/presentation/chat/view/chat_screen.dart';
+import 'package:flutter_application_1/presentation/chat/view/group_chat.dart';
+import 'package:flutter_application_1/presentation/chat/view/group_screen.dart';
+import 'package:flutter_application_1/presentation/chat/view/message_screen.dart';
 import 'package:flutter_application_1/presentation/home/view/home_screen.dart';
 import 'package:flutter_application_1/presentation/mainscreen/view/main_screen.dart';
 import 'package:flutter_application_1/presentation/profile/edit_profile.dart';
+import 'package:flutter_application_1/presentation/boardcast/view/broadcast_channel.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_screen.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_settings.dart';
 import 'package:flutter_application_1/presentation/profile/view/social_link.dart';
 import 'package:flutter_application_1/presentation/profile/view/subscriber_screen.dart';
+import 'package:flutter_application_1/presentation/search_profile/search_user_profile.dart';
+import 'package:flutter_application_1/presentation/search_profile/view/search_profile.dart';
 import 'package:flutter_application_1/presentation/splash/splash_screen.dart';
 import 'package:flutter_application_1/presentation/subscription/view/current_plan.dart';
 import 'package:flutter_application_1/presentation/subscription/view/membership_screen.dart';
@@ -37,6 +48,17 @@ class Routes {
   static const String profileSettings = "/profileSettings";
   static const String homeRoute = "/homeRoute";
   static const String videoScreen = "/videoScreen";
+  static const String searchProfile = "/searchProfile";
+  static const String searchUserProfile = "/searchUserProfile";
+  static const String broadcastChannal = "/broadcastChannal";
+  static const String myChannels = "/myChannels";
+  static const String publicChannels = "/publicChannels";
+  static const String createChannel = "/createChannel";
+  static const String addPeople = "/addPeople";
+  static const String chatRoute = "/chatRoute";
+  static const String massageRoute = "/massageRoute";
+  static const String groupChat = "/groupChat";
+  static const String groupMessages = "/groupMessages";
 }
 
 class RouteGenerator {
@@ -78,6 +100,28 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case Routes.videoScreen:
         return MaterialPageRoute(builder: (_) => const VideoScreen());
+      case Routes.searchProfile:
+        return MaterialPageRoute(builder: (_) => const SearchProfile());
+      case Routes.searchUserProfile:
+        return MaterialPageRoute(builder: (_) => const SearchUserProfile());
+      case Routes.broadcastChannal:
+        return MaterialPageRoute(builder: (_) => const BroadcastChannel());
+      case Routes.myChannels:
+        return MaterialPageRoute(builder: (_) => const MyChannels());
+      case Routes.publicChannels:
+        return MaterialPageRoute(builder: (_) => const PublicChannels());
+      case Routes.createChannel:
+        return MaterialPageRoute(builder: (_) => const CreateChannel());
+      case Routes.addPeople:
+        return MaterialPageRoute(builder: (_) => const AddPeople());
+      case Routes.chatRoute:
+        return MaterialPageRoute(builder: (_) => const ChatScreen());
+      case Routes.massageRoute:
+        return MaterialPageRoute(builder: (_) => const MessageScreen());
+      case Routes.groupChat:
+        return MaterialPageRoute(builder: (_) => const GroupChat());
+      case Routes.groupMessages:
+        return MaterialPageRoute(builder: (_) => const GroupScreen());
 
       default:
         return unDefineRoute();

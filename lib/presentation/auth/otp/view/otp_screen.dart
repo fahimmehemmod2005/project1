@@ -48,7 +48,8 @@ class _OtpScreenState extends State<OtpScreen> {
     );
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
+        extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,

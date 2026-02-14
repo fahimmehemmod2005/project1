@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/constansts/app_icons.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

@@ -88,8 +88,8 @@ class _VideoScreenState extends State<VideoScreen> {
                   // Video Player
                   Center(
                     child: controller.value.isInitialized
-                        ? FittedBox(
-                            fit: BoxFit.cover,
+                        ? AspectRatio(
+                            aspectRatio: 9 / 16,
                             child: SizedBox(
                               width: controller.value.size.width,
                               height: controller.value.size.height,

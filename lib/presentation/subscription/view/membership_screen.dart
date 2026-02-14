@@ -20,7 +20,7 @@ class _MembershipScreenState extends State<MembershipScreen> {
       length: 3,
       initialIndex: 0,
       child: Scaffold(
-        extendBodyBehindAppBar: true,
+              extendBodyBehindAppBar: true,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           centerTitle: true,
@@ -71,7 +71,12 @@ class _MembershipScreenState extends State<MembershipScreen> {
                   ),
                   20.verticalSpace,
                   Expanded(
-                    child: TabBarView(children: [Free(), Monthly(), Yearly()]),
+                    child: TabBarView(
+                      children: [
+                        Free(), 
+                        Monthly(), 
+                        Yearly()
+                        ]),
                   ),
                 ],
               ),

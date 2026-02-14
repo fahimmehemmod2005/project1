@@ -7,7 +7,6 @@ import 'package:flutter_application_1/presentation/widgets/helper_widget.dart';
 import 'package:flutter_application_1/presentation/widgets/primary_button.dart';
 import 'package:flutter_application_1/presentation/widgets/text_input_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
