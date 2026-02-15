@@ -5,6 +5,7 @@ import 'package:flutter_application_1/presentation/chat/view/message_screen.dart
 import 'package:flutter_application_1/presentation/home/view/home_screen.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_screen.dart';
 import 'package:flutter_application_1/presentation/search_profile/view/search_profile.dart';
+import 'package:flutter_application_1/presentation/shop/view/all_product.dart';
 import 'package:flutter_application_1/presentation/video/view/video_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,9 +22,7 @@ class _MainScreenState extends State<MainScreen> {
   final screens = [
     const HomeScreen(),
     const VideoScreen(),
-    const Center(
-      child: Text('Shop', style: TextStyle(color: Colors.white)),
-    ),
+    const AllProduct(),
     const MessageScreen(),
     const SearchProfile(),
     const ProfileScreen(),

@@ -6,9 +6,7 @@ import 'package:flutter_application_1/presentation/widgets/show_white_model_bott
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileFeaturesWidget extends StatelessWidget {
-  const ProfileFeaturesWidget({
-    super.key,
-  });
+  const ProfileFeaturesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,11 @@ class ProfileFeaturesWidget extends StatelessWidget {
                 ),
               ),
               20.verticalSpace,
-              Card(
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0.r),
+                  color: Colors.white.withAlpha(30),
+                ),
                 child: ListTile(
                   leading: Icon(
                     CupertinoIcons.play_rectangle_fill,
@@ -41,16 +43,23 @@ class ProfileFeaturesWidget extends StatelessWidget {
                   title: Text('Reels', style: AppStyles.size12w400()),
                 ),
               ),
-              Card(
+              10.verticalSpace,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0.r),
+                  color: Colors.white.withAlpha(30),
+                ),
                 child: ListTile(
-                  leading: Icon(
-                    CupertinoIcons.memories,
-                    color: Colors.white,
-                  ),
+                  leading: Icon(CupertinoIcons.memories, color: Colors.white),
                   title: Text('Story', style: AppStyles.size12w400()),
                 ),
               ),
-              Card(
+              10.verticalSpace,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0.r),
+                  color: Colors.white.withAlpha(30),
+                ),
                 child: ListTile(
                   leading: Icon(
                     CupertinoIcons.square_grid_2x2_fill,
@@ -59,23 +68,37 @@ class ProfileFeaturesWidget extends StatelessWidget {
                   title: Text('Posts', style: AppStyles.size12w400()),
                 ),
               ),
-              Card(
+              10.verticalSpace,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0.r),
+                  color: Colors.white.withAlpha(30),
+                ),
                 child: ListTile(
-                  leading: Icon(
-                    CupertinoIcons.chart_bar,
-                    color: Colors.white,
-                  ),
+                  leading: Icon(CupertinoIcons.chart_bar, color: Colors.white),
                   title: Text('Dashboard', style: AppStyles.size12w400()),
+                onTap: (){
+                   Navigator.pop(context);
+                    Navigator.pushNamed(context, Routes.profileDeshboard);
+                },
                 ),
               ),
-              Card(
+              10.verticalSpace,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0.r),
+                  color: Colors.white.withAlpha(30),
+                ),
                 child: ListTile(
-                  leading: Icon(
-                    CupertinoIcons.news_solid,
-                    color: Colors.white,
+                  leading: Icon(CupertinoIcons.news_solid, color: Colors.white),
+                  title: Text(
+                    'Broadcast Channels',
+                    style: AppStyles.size12w400(),
                   ),
-                  title: Text('Broadcast Channels', style: AppStyles.size12w400()),
-                  onTap: (){Navigator.pushNamed(context, Routes.broadcastChannal);},
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, Routes.broadcastChannal);
+                  },
                 ),
               ),
             ],

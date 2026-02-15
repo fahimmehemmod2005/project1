@@ -9,6 +9,8 @@ class TextInputField extends StatelessWidget {
   final int? minLines;
   final bool obscureText;
   final IconData? suffixIcon;
+  final double? borderRadius;
+  final Color? fillColor;
   const TextInputField({
     super.key,
     this.hintText,
@@ -16,7 +18,8 @@ class TextInputField extends StatelessWidget {
     this.minLines = 1,
     this.obscureText = false,
     this.suffixIcon,
-    this.mainLabel,
+    this.mainLabel, this.borderRadius,
+     this.fillColor
   });
 
   @override
@@ -52,14 +55,14 @@ class TextInputField extends StatelessWidget {
               fontSize: 13.sp,
               fontWeight: FontWeight.w500,
             ),
-            fillColor: CupertinoColors.systemGrey.withAlpha(30),
+            fillColor:fillColor ?? CupertinoColors.systemGrey.withAlpha(30),
             filled: true,
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(borderRadius??12.r),
               borderSide: BorderSide(color: CupertinoColors.white, width: 0.5),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12.r),
+              borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
               borderSide: BorderSide(color: CupertinoColors.systemPurple, width: 0.5),
             )
           ),

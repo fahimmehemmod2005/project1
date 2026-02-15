@@ -51,6 +51,11 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     onTap: () {},
                   ),
                   SettingsCard(
+                    title: 'Address',
+                    preffixIcon: CupertinoIcons.location_circle,
+                    onTap: () {},
+                  ),
+                  SettingsCard(
                     title: 'Manage Subscription',
                     preffixIcon: CupertinoIcons.rosette,
                     onTap: () {

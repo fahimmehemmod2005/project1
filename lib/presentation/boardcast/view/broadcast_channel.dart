@@ -3,6 +3,7 @@ import 'package:flutter_application_1/core/constansts/app_images.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
 import 'package:flutter_application_1/presentation/widgets/helper_widget.dart';
+import 'package:flutter_application_1/presentation/widgets/text_input_field.dart';
 import 'package:flutter_application_1/presentation/widgets/user_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -37,7 +38,11 @@ class _BroadcastChannelState extends State<BroadcastChannel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Channels', style: AppStyles.size14w600()),
+            TextInputField(
+              hintText: 'Search any channels',
+            ),
+            10.verticalSpace,
+            Text('My Channels', style: AppStyles.size14w600()),
             10.verticalSpace,
             ListView.separated(
               shrinkWrap: true,
@@ -61,7 +66,7 @@ class _BroadcastChannelState extends State<BroadcastChannel> {
               },
             ),
             10.verticalSpace,
-            Text('Channels', style: AppStyles.size14w600()),
+            Text('Public Channels', style: AppStyles.size14w600()),
             10.verticalSpace,
             ListView.separated(
               shrinkWrap: true,
