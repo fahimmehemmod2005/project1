@@ -23,6 +23,16 @@ class _MyChannelsState extends State<MyChannels> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         actions: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0.r),
+                side: BorderSide(color: CupertinoColors.systemPurple),
+              ),
+            ),
+            onPressed: () {},
+            child: Text('Go Live',style: AppStyles.size12w400(),),
+          ),
           IconButton(
             onPressed: () {},
             icon: Icon(CupertinoIcons.bars, color: Colors.white),
@@ -110,26 +120,26 @@ class _MyChannelsState extends State<MyChannels> {
               ),
             ),
             5.verticalSpace,
-            Text('Most Relevant',style: AppStyles.size14w600(),),
+            Text('Most Relevant', style: AppStyles.size14w600()),
             10.verticalSpace,
-                ListView.separated(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: 3,
-                  separatorBuilder: (context, index) => 10.verticalSpace,
-                  itemBuilder: (context, index) {
-                    return PhotosCard(
-                      profile: AppImages.user6,
-                      name: 'Alex',
-                      title: 'This is nature',
-                      photo:
-                          'https://i.pinimg.com/736x/11/30/cd/1130cd70d2cf986ea0d23341c9249ce5.jpg',
-                      like: '12.5K',
-                      comment: '450',
-                      share: "1k",
-                    );
-                  },
-                ),
+            ListView.separated(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 3,
+              separatorBuilder: (context, index) => 10.verticalSpace,
+              itemBuilder: (context, index) {
+                return PhotosCard(
+                  profile: AppImages.user6,
+                  name: 'Alex',
+                  title: 'This is nature',
+                  photo:
+                      'https://i.pinimg.com/736x/11/30/cd/1130cd70d2cf986ea0d23341c9249ce5.jpg',
+                  like: '12.5K',
+                  comment: '450',
+                  share: "1k",
+                );
+              },
+            ),
           ],
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/constansts/app_icons.dart';
 import 'package:flutter_application_1/core/constansts/app_images.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
+import 'package:flutter_application_1/core/routes/route_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -22,40 +23,32 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: Color(0xFF1a1625),
         elevation: 0,
         centerTitle: false,
-        title: Row(
-          children: [
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Container(
-                  height: 35.h,
-                  width: 35.w,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(image: AssetImage(AppImages.user3)),
-                  ),
+        title: GestureDetector(
+          onTap: (){
+            Navigator.pushNamed(context, Routes.searchUserProfile);
+          },
+          child: Row(
+            children: [
+              Container(
+                height: 35.h,
+                width: 35.w,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(image: AssetImage(AppImages.user3)),
                 ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Image.asset(
-                    AppIcons.blueCheck,
-                    height: 15.h,
-                    width: 15.w,
-                  ),
-                ),
-              ],
-            ),
-            5.horizontalSpace,
-            Expanded(
-              child: Text(
+              ),
+          
+              5.horizontalSpace,
+              Text(
                 'Aryan Das',
                 style: AppStyles.size16w600(),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-            ),
-          ],
+              5.horizontalSpace,
+              Image.asset(AppIcons.blueCheck, height: 15.h, width: 15.w),
+            ],
+          ),
         ),
         actions: [
           TextButton(
@@ -219,11 +212,19 @@ class _ChatScreenState extends State<ChatScreen> {
                       onPressed: () {},
                     ),
                     IconButton(
-                      icon: Icon(CupertinoIcons.mic, size: 24, color: Colors.white),
+                      icon: Icon(
+                        CupertinoIcons.mic,
+                        size: 24,
+                        color: Colors.white,
+                      ),
                       onPressed: () {},
                     ),
                     IconButton(
-                      icon: Icon(CupertinoIcons.paperplane, size: 24, color: Colors.white),
+                      icon: Icon(
+                        CupertinoIcons.paperplane,
+                        size: 24,
+                        color: Colors.white,
+                      ),
                       onPressed: () {},
                     ),
                   ],

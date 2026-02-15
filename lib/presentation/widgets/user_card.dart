@@ -45,18 +45,21 @@ class UserCard extends StatelessWidget {
                 ),
               ),
             ),
-            if(showBadge)
-            Positioned(
-            bottom: 0,
-            right: 0,
-              child: Image.asset(AppIcons.blueCheck,height: 20.0.h,width: 20.0.w,))
+            
           ],
         ),
-        title: Text(
-          title ?? '',
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: AppStyles.size14w400(),
+        title: Row(
+          children: [
+            Text(
+              title ?? '',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: AppStyles.size14w400(),
+            ),
+            5.horizontalSpace,
+            if(showBadge)
+            Image.asset(AppIcons.blueCheck,height: 15.0.h,width: 15.0.w,)
+          ],
         ),
         subtitle: Text(
           subtitle ?? '',

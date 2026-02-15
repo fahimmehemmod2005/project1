@@ -14,7 +14,8 @@ import 'package:flutter_application_1/presentation/chat/view/group_screen.dart';
 import 'package:flutter_application_1/presentation/chat/view/message_screen.dart';
 import 'package:flutter_application_1/presentation/home/view/home_screen.dart';
 import 'package:flutter_application_1/presentation/mainscreen/view/main_screen.dart';
-import 'package:flutter_application_1/presentation/profile/edit_profile.dart';
+import 'package:flutter_application_1/presentation/notification/view/notification_screen.dart';
+import 'package:flutter_application_1/presentation/profile/view/edit_profile.dart';
 import 'package:flutter_application_1/presentation/boardcast/view/broadcast_channel.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_screen.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_settings.dart';
@@ -22,6 +23,15 @@ import 'package:flutter_application_1/presentation/profile/view/social_link.dart
 import 'package:flutter_application_1/presentation/profile/view/subscriber_screen.dart';
 import 'package:flutter_application_1/presentation/search_profile/search_user_profile.dart';
 import 'package:flutter_application_1/presentation/search_profile/view/search_profile.dart';
+import 'package:flutter_application_1/presentation/shop/view/all_product.dart';
+import 'package:flutter_application_1/presentation/shop/view/cart_page.dart';
+import 'package:flutter_application_1/presentation/shop/view/my_stores.dart';
+import 'package:flutter_application_1/presentation/shop/view/order_review.dart';
+import 'package:flutter_application_1/presentation/shop/view/payment_success.dart';
+import 'package:flutter_application_1/presentation/shop/view/product_view.dart';
+import 'package:flutter_application_1/presentation/shop/view/public_stores.dart';
+import 'package:flutter_application_1/presentation/shop/view/store_screen.dart';
+import 'package:flutter_application_1/presentation/shop/view/wishlist.dart';
 import 'package:flutter_application_1/presentation/splash/splash_screen.dart';
 import 'package:flutter_application_1/presentation/subscription/view/current_plan.dart';
 import 'package:flutter_application_1/presentation/subscription/view/membership_screen.dart';
@@ -59,6 +69,16 @@ class Routes {
   static const String massageRoute = "/massageRoute";
   static const String groupChat = "/groupChat";
   static const String groupMessages = "/groupMessages";
+  static const String notificationRoute = "/notificationRoute";
+  static const String allProduct = "/allProduct";
+  static const String productView = "/productView";
+  static const String wishlistRoute = "/wishlistRoute";
+  static const String cartRoute = "/cartRoute";
+  static const String orderReview = "/orderReview";
+  static const String paymentSuccess = "/paymentSuccess";
+  static const String storeScreen = "/storeScreen";
+  static const String myStores = "/myStores";
+  static const String publicStores = "/publicStores";
 }
 
 class RouteGenerator {
@@ -122,6 +142,26 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const GroupChat());
       case Routes.groupMessages:
         return MaterialPageRoute(builder: (_) => const GroupScreen());
+      case Routes.notificationRoute:
+        return MaterialPageRoute(builder: (_) => const NotificationScreen());
+      case Routes.allProduct:
+        return MaterialPageRoute(builder: (_) => const AllProduct());
+      case Routes.productView:
+        return MaterialPageRoute(builder: (_) => const ProductView());
+      case Routes.wishlistRoute:
+        return MaterialPageRoute(builder: (_) => const Wishlist());
+      case Routes.cartRoute:
+        return MaterialPageRoute(builder: (_) => const CartPage());
+      case Routes.orderReview:
+        return MaterialPageRoute(builder: (_) => const OrderReview());
+      case Routes.paymentSuccess:
+        return MaterialPageRoute(builder: (_) => const PaymentSuccess());
+      case Routes.storeScreen:
+        return MaterialPageRoute(builder: (_) => const StoreScreen());
+      case Routes.myStores:
+        return MaterialPageRoute(builder: (_) => const MyStores());
+      case Routes.publicStores:
+        return MaterialPageRoute(builder: (_) => const PublicStores());
 
       default:
         return unDefineRoute();

@@ -75,7 +75,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     10.horizontalSpace,
                     GestureDetector(
                       child: Icon(CupertinoIcons.bell, size: 25.0),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, Routes.notificationRoute);
+                      },
                     ),
                   ],
                 ),

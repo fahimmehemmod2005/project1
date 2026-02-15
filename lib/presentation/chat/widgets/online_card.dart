@@ -76,11 +76,26 @@ Widget build(BuildContext context) {
               ],
             ),
             5.verticalSpace,
-            Text(
-              name ?? '',
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  name ?? '',
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                2.horizontalSpace,
+                Container(
+                  height: 5.h,
+                  width: 5.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: CupertinoColors.activeGreen
+                  ),
+                )
+              ],
             ),
           ],
         ),

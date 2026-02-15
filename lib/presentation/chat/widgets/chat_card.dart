@@ -10,6 +10,7 @@ class ChatCard extends StatelessWidget {
   final String? date;
   final void Function()? onTap;
   final void Function()? onLongTap;
+  final bool showBadge;
   const ChatCard({
     super.key,
     this.image,
@@ -17,7 +18,7 @@ class ChatCard extends StatelessWidget {
     this.subTitle,
     this.date,
     this.onTap,
-    this.onLongTap,
+    this.onLongTap, this.showBadge = true,
   });
 
   @override
@@ -32,37 +33,34 @@ class ChatCard extends StatelessWidget {
             padding: const EdgeInsets.all(3.0),
             child: Row(
               children: [
-                Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                    Container(
-                      height: 45.h,
-                      width: 45.w,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage(image ?? ''),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                Container(
+                  height: 45.h,
+                  width: 45.w,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(image ?? ''),
+                      fit: BoxFit.cover,
                     ),
-                    Positioned(
-                      bottom: -3,
-                      right: -3,
-                      child: Image.asset(
-                        AppIcons.blueCheck,
-                        height: 20.h,
-                        width: 20.w,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
                 10.horizontalSpace,
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(title ?? '', style: AppStyles.size14w400()),
+                      Row(
+                        children: [
+                          Text(title ?? '', style: AppStyles.size14w400()),
+                        5.horizontalSpace,
+                        if(showBadge)
+                Image.asset(
+                  AppIcons.blueCheck,
+                  height: 15.h,
+                  width: 15.w,
+                ),
+                        ],
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

@@ -133,38 +133,30 @@ class _MessageScreenState extends State<MessageScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: Text(
-                        'Others Features',
-                        style: AppStyles.size16w600(),
-                      ),
+                    child: Text(
+                      'Others Features',
+                      style: AppStyles.size16w600(),
                     ),
                   ),
                   10.verticalSpace,
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                      Navigator.pushNamed(context, Routes.groupMessages);
-                    },
-                    child: Text('Groups Chat', style: AppStyles.size14w400()),
-                  ),
-                  const Divider(),
-                  GestureDetector(
-                    onTap: () {
-                       Navigator.pop(context);
-                    },
-                    child: Text(
-                      'Broadcast Chat',
-                      style: AppStyles.size14w400(),
+                  Card(
+                    child: ListTile(
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.pushNamed(context, Routes.groupMessages);
+                      },
+                      title: Text('Groups Chat', style: AppStyles.size12w400()),
+                      trailing: Icon(CupertinoIcons.group_solid,color: Colors.white,size: 20,),
                     ),
                   ),
-                  const Divider(),
-                  GestureDetector(
-                    onTap: () {
-                       Navigator.pop(context);
-                    },
-                    child: Text('Settings', style: AppStyles.size14w400()),
+                  Card(
+                    child: ListTile(
+                      onTap: () {
+                         Navigator.pop(context);
+                      },
+                      title: Text('Settings', style: AppStyles.size12w400()),
+                    trailing: Icon(CupertinoIcons.settings_solid,color: Colors.white,size: 20,),
+                    ),
                   ),
                 ],
               ),

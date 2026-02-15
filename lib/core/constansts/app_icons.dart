@@ -16,4 +16,7 @@ class AppIcons {
   static const String tiktok = 'assets/icons/tiktok.png';
   static const String youtube = 'assets/icons/youtube.png';
   static const String blankCard = 'assets/images/blank_card.png';
+  static const String dress = 'assets/icons/dress.png';
+  static const String cardBlue = 'assets/icons/cardblue.png';
+  static const String car = 'assets/icons/car.png';
 }

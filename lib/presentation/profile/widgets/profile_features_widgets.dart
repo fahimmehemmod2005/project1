@@ -6,9 +6,7 @@ import 'package:flutter_application_1/presentation/widgets/show_white_model_bott
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileFeaturesWidget extends StatelessWidget {
-  const ProfileFeaturesWidget({
-    super.key,
-  });
+  const ProfileFeaturesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,10 +41,7 @@ class ProfileFeaturesWidget extends StatelessWidget {
               ),
               Card(
                 child: ListTile(
-                  leading: Icon(
-                    CupertinoIcons.memories,
-                    color: Colors.white,
-                  ),
+                  leading: Icon(CupertinoIcons.memories, color: Colors.white),
                   title: Text('Story', style: AppStyles.size12w400()),
                 ),
               ),
@@ -61,21 +56,31 @@ class ProfileFeaturesWidget extends StatelessWidget {
               ),
               Card(
                 child: ListTile(
-                  leading: Icon(
-                    CupertinoIcons.chart_bar,
-                    color: Colors.white,
-                  ),
+                  leading: Icon(CupertinoIcons.chart_bar, color: Colors.white),
                   title: Text('Dashboard', style: AppStyles.size12w400()),
                 ),
               ),
               Card(
                 child: ListTile(
-                  leading: Icon(
-                    CupertinoIcons.news_solid,
-                    color: Colors.white,
+                  leading: Icon(CupertinoIcons.news_solid, color: Colors.white),
+                  title: Text(
+                    'Broadcast Channels',
+                    style: AppStyles.size12w400(),
                   ),
-                  title: Text('Broadcast Channels', style: AppStyles.size12w400()),
-                  onTap: (){Navigator.pushNamed(context, Routes.broadcastChannal);},
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, Routes.broadcastChannal);
+                  },
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Icon(CupertinoIcons.cart_fill, color: Colors.white),
+                  title: Text('Store', style: AppStyles.size12w400()),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, Routes.storeScreen);
+                  },
                 ),
               ),
             ],

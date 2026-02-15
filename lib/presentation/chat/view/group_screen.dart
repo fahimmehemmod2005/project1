@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/constansts/app_images.dart';
+import 'package:flutter_application_1/core/constansts/app_icons.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
 import 'package:flutter_application_1/presentation/chat/widgets/chat_card.dart';
@@ -45,7 +45,8 @@ class _GroupScreenState extends State<GroupScreen> {
               separatorBuilder: (context, index) => 10.verticalSpacingRadius,
               itemBuilder: (context, index) {
                 return ChatCard(
-                  image: AppImages.user4,
+                  showBadge: false,
+                  image: AppIcons.tiktok,
                   title: 'Friends entertainment',
                   subTitle: 'Aryan send a message',
                   date: '3.4k seen',
