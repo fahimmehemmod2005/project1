@@ -62,7 +62,7 @@ class ProfileFeaturesWidget extends StatelessWidget {
                 ),
                 child: ListTile(
                   leading: Icon(
-                    CupertinoIcons.square_grid_2x2_fill,
+                    Icons.image,
                     color: Colors.white,
                   ),
                   title: Text('Posts', style: AppStyles.size12w400()),
@@ -75,7 +75,7 @@ class ProfileFeaturesWidget extends StatelessWidget {
                   color: Colors.white.withAlpha(30),
                 ),
                 child: ListTile(
-                  leading: Icon(CupertinoIcons.chart_bar, color: Colors.white),
+                  leading: Icon(Icons.dashboard, color: Colors.white),
                   title: Text('Dashboard', style: AppStyles.size12w400()),
                 onTap: (){
                    Navigator.pop(context);

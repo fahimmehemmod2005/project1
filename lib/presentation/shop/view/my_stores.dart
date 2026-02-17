@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/constansts/app_icons.dart';
 import 'package:flutter_application_1/core/constansts/app_images.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
@@ -25,7 +26,25 @@ class _MyStoresState extends State<MyStores> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: false,
-        title: Text('Nikee', style: AppStyles.size14w600()),
+        title: Row(
+          children: [
+            Container(
+              height: 30.h,
+              width: 30.w,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage(AppImages.shopBanner),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            5.horizontalSpace,
+            Text('Nikee', style: AppStyles.size14w600()),
+            5.horizontalSpace,
+            Image.asset(AppIcons.blueCheck, height: 10.h, width: 10.w),
+          ],
+        ),
       ),
       body: HelperWidget(
         child: Column(
@@ -131,9 +150,16 @@ class _MyStoresState extends State<MyStores> {
                 ),
               ],
             ),
-            10.verticalSpace,
-            Text('My Products', style: AppStyles.size14w600()),
-            10.verticalSpace,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('My Products', style: AppStyles.size14w600()),
+                TextButton(
+                  onPressed: () {},
+                  child: Text('View All', style: AppStyles.size14w400()),
+                ),
+              ],
+            ),
             ListView.separated(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),

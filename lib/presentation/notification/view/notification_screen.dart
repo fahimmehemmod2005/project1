@@ -89,6 +89,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 );
               },
             ),
+            10.verticalSpace,
           ],
         ),
       ),

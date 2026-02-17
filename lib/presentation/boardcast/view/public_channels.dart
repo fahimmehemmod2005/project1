@@ -95,8 +95,7 @@ class _PublicChannelsState extends State<PublicChannels> {
                       profile: AppImages.user6,
                       name: 'Alex',
                       title: 'This is nature',
-                      photo:
-                          'https://i.pinimg.com/736x/11/30/cd/1130cd70d2cf986ea0d23341c9249ce5.jpg',
+                      photo: AppImages.shopBanner,
                       like: '12.5K',
                       comment: '450',
                       share: "1k",

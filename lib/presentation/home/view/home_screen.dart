@@ -27,6 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: double.infinity,
+        width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -148,15 +150,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ListView.separated(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  itemCount: 1,
+                  itemCount: 10,
                   separatorBuilder: (context, index) => 10.verticalSpace,
                   itemBuilder: (context, index) {
                     return PhotosCard(
                       profile: AppImages.user6,
                       name: 'Alex',
                       title: 'This is nature',
-                      photo:
-                          'https://i.pinimg.com/736x/11/30/cd/1130cd70d2cf986ea0d23341c9249ce5.jpg',
+                      photo: AppImages.onlineShoping,
                       like: '12.5K',
                       comment: '450',
                       share: "1k",
@@ -314,7 +315,7 @@ class PhotosCard extends StatelessWidget {
               ],
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
-                child: Image.network(photo ?? '', fit: BoxFit.contain),
+                child: Image.asset(photo ?? '', fit: BoxFit.contain),
               ),
             ),
           ),

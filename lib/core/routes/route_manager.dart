@@ -9,6 +9,7 @@ import 'package:flutter_application_1/presentation/boardcast/view/create_channel
 import 'package:flutter_application_1/presentation/boardcast/view/my_channels.dart';
 import 'package:flutter_application_1/presentation/boardcast/view/public_channels.dart';
 import 'package:flutter_application_1/presentation/chat/view/chat_screen.dart';
+import 'package:flutter_application_1/presentation/chat/view/create_group.dart';
 import 'package:flutter_application_1/presentation/chat/view/group_chat.dart';
 import 'package:flutter_application_1/presentation/chat/view/group_screen.dart';
 import 'package:flutter_application_1/presentation/chat/view/message_screen.dart';
@@ -95,6 +96,7 @@ class Routes {
   static const String createdShopPage = "/createdShopPage";
   static const String shopDeshboard = "/shopDeshboard";
   static const String profileDeshboard = "/profileDeshboard";
+  static const String createGroup = "/createGroup";
 }
 
 class RouteGenerator {
@@ -194,6 +196,9 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const ShopDeshboard());
       case Routes.profileDeshboard:
         return MaterialPageRoute(builder: (_) => const ProfileDeshboard());
+      case Routes.createGroup:
+        return MaterialPageRoute(builder: (_) => const CreateGroup());
+      
 
       default:
         return unDefineRoute();

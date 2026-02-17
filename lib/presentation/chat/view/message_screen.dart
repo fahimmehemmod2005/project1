@@ -139,23 +139,40 @@ class _MessageScreenState extends State<MessageScreen> {
                     ),
                   ),
                   10.verticalSpace,
-                  Card(
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0.r),
+                      color: Colors.white.withAlpha(30),
+                    ),
                     child: ListTile(
                       onTap: () {
                         Navigator.pop(context);
                         Navigator.pushNamed(context, Routes.groupMessages);
                       },
                       title: Text('Groups Chat', style: AppStyles.size12w400()),
-                      trailing: Icon(CupertinoIcons.group_solid,color: Colors.white,size: 20,),
+                      trailing: Icon(
+                        CupertinoIcons.group_solid,
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
                   ),
-                  Card(
+                  10.verticalSpace,
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0.r),
+                      color: Colors.white.withAlpha(30),
+                    ),
                     child: ListTile(
                       onTap: () {
-                         Navigator.pop(context);
+                        Navigator.pop(context);
                       },
                       title: Text('Settings', style: AppStyles.size12w400()),
-                    trailing: Icon(CupertinoIcons.settings_solid,color: Colors.white,size: 20,),
+                      trailing: Icon(
+                        CupertinoIcons.settings_solid,
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
                   ),
                 ],

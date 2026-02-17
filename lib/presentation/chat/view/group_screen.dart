@@ -26,6 +26,22 @@ class _GroupScreenState extends State<GroupScreen> {
         backgroundColor: Colors.transparent,
         centerTitle: false,
         title: Text('Messages', style: AppStyles.size16w700()),
+         actions: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(50.w, 40.h),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0.r),
+                side: BorderSide(color: CupertinoColors.systemPurple),
+              ),
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, Routes.createGroup);
+            },
+            child: Text('Create', style: AppStyles.size12w400()),
+          ),
+          10.horizontalSpace,
+        ],
       ),
       body: HelperWidget(
         child: Column(

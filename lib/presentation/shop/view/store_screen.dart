@@ -27,6 +27,7 @@ class _StoreScreenState extends State<StoreScreen> {
         actions: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
+               minimumSize: Size(50.w, 40.h),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0.r),
                 side: BorderSide(color: CupertinoColors.systemPurple),
