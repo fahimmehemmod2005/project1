@@ -50,7 +50,7 @@ class UserCard extends StatelessWidget {
         ),
         title: Row(
           children: [
-            Expanded(
+            Flexible(
               child: Text(
                 title ?? '',
                 maxLines: 1,
@@ -60,7 +60,7 @@ class UserCard extends StatelessWidget {
             ),
             5.horizontalSpace,
             if(showBadge)
-            Image.asset(AppIcons.blueCheck,height: 15.0.h,width: 15.0.w,)
+            Flexible(child: Image.asset(AppIcons.blueCheck,height: 15.0.h,width: 15.0.w,))
           ],
         ),
         subtitle: Text(

@@ -26,46 +26,46 @@ class _ProfileSettingsState extends State<ProfileSettings> {
         title: Text('Settings', style: AppStyles.size16w600()),
       ),
       body: HelperWidget(
-        child: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: CupertinoColors.black,
-                borderRadius: BorderRadius.circular(12.0.r),
+        child: Container(
+          decoration: BoxDecoration(
+            color: CupertinoColors.black,
+            borderRadius: BorderRadius.circular(12.0.r),
+          ),
+          child: Column(
+            children: [
+              SettingsCard(
+                title: 'Privacy Settings',
+                preffixIcon: CupertinoIcons.shield_fill,
+                onTap: () {
+                 Navigator.pushNamed(context, Routes.privarySettings);
+                },
               ),
-              child: Column(
-                children: [
-                  SettingsCard(
-                    title: 'Privacy Settings',
-                    preffixIcon: CupertinoIcons.shield_fill,
-                    onTap: () {},
-                  ),
-                  SettingsCard(
-                    title: 'Payment and Invoice',
-                    preffixIcon: CupertinoIcons.creditcard_fill,
-                    onTap: () {},
-                  ),
-                  SettingsCard(
-                    title: 'Account Management',
-                    preffixIcon: CupertinoIcons.settings,
-                    onTap: () {},
-                  ),
-                  SettingsCard(
-                    title: 'Address',
-                    preffixIcon: CupertinoIcons.location_circle,
-                    onTap: () {},
-                  ),
-                  SettingsCard(
-                    title: 'Manage Subscription',
-                    preffixIcon: CupertinoIcons.rosette,
-                    onTap: () {
-                      Navigator.pushNamed(context, Routes.currentPlanRoute);
-                    },
-                  ),
-                ],
+              SettingsCard(
+                title: 'Payment and Invoice',
+                preffixIcon: CupertinoIcons.creditcard_fill,
+                onTap: () {},
               ),
-            ),
-          ],
+              SettingsCard(
+                title: 'Account Management',
+                preffixIcon: CupertinoIcons.settings,
+                onTap: () {
+                    Navigator.pushNamed(context, Routes.accountManagement);
+                },
+              ),
+              SettingsCard(
+                title: 'Address',
+                preffixIcon: CupertinoIcons.location_circle,
+                onTap: () {},
+              ),
+              SettingsCard(
+                title: 'Manage Subscription',
+                preffixIcon: CupertinoIcons.rosette,
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.currentPlanRoute);
+                },
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
@@ -101,7 +101,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 20.verticalSpace,
                 Row(
                   children: [
-                    Expanded(
+                    Flexible(
                       child: PrimaryButton(
                         backgroundColor: CupertinoColors.systemRed,
                         label: 'Logout',
@@ -112,7 +112,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                       ),
                     ),
                     10.horizontalSpace,
-                    Expanded(
+                    Flexible(
                       child: PrimaryButton(
                         label: 'Cancel',
                         backgroundColor: CupertinoColors.black,
@@ -133,14 +133,14 @@ class _ProfileSettingsState extends State<ProfileSettings> {
 }
 
 class SettingsCard extends StatelessWidget {
-  final String title;
-  final IconData preffixIcon;
-  final void Function() onTap;
+  final String? title;
+  final IconData? preffixIcon;
+  final void Function()? onTap;
   const SettingsCard({
     super.key,
-    required this.title,
-    required this.preffixIcon,
-    required this.onTap,
+     this.title,
+     this.preffixIcon,
+     this.onTap,
   });
 
   @override
@@ -149,9 +149,10 @@ class SettingsCard extends StatelessWidget {
       onTap: onTap,
       child: ListTile(
         leading: Icon(preffixIcon, size: 20.0),
-        title: Text(title),
+        title: Text(title ?? ''),
         titleTextStyle: AppStyles.size12w400(),
-        trailing: Icon(CupertinoIcons.chevron_right, size: 20.0),
+        
+        trailing:Icon(CupertinoIcons.chevron_right, size: 20.0),
       ),
     );
   }

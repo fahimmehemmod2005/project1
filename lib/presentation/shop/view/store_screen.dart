@@ -75,13 +75,14 @@ class _StoreScreenState extends State<StoreScreen> {
               itemBuilder: (context, index) {
                 return MyShopCard(
                   showVisitButton: true,
-                  name: 'poma',
+                  name: 'Puma',
                   onVisitTap: () {
                      Navigator.pushNamed(context, Routes.publicStores);
                   },
                 );
               },
             ),
+            10.verticalSpace,
           ],
         ),
       ),
@@ -126,23 +127,27 @@ class MyShopCard extends StatelessWidget {
               ),
             ),
             10.horizontalSpace,
-            Expanded(
+            Flexible(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      Text(
-                        name ?? '',
-                        style: AppStyles.size14w600(),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                      Flexible(
+                        child: Text(
+                          name ?? '',
+                          style: AppStyles.size14w600(),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                       5.horizontalSpace,
-                      Image.asset(
-                        AppIcons.blueCheck,
-                        height: 15.h,
-                        width: 15.w,
+                      Flexible(
+                        child: Image.asset(
+                          AppIcons.blueCheck,
+                          height: 15.h,
+                          width: 15.w,
+                        ),
                       ),
                     ],
                   ),

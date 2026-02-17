@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/constansts/app_images.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
@@ -7,7 +8,6 @@ import 'package:flutter_application_1/presentation/profile/widgets/profile_heade
 import 'package:flutter_application_1/presentation/profile/widgets/social_links_button.dart';
 import 'package:flutter_application_1/presentation/widgets/primary_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../widgets/profile_features_widgets.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -16,30 +16,26 @@ class ProfileScreen extends StatefulWidget {
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends State<ProfileScreen>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
-      initialIndex: 0,
       child: Scaffold(
-        extendBodyBehindAppBar: true,
         extendBody: true,
-        backgroundColor: Colors.transparent,
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Color(0xFF1a1625),
-          leading: ProfileFeaturesWidget(),
+          backgroundColor: const Color(0xFF1a1625),
           centerTitle: true,
           title: Text(
             'fahim2005',
             style: AppStyles.size16w600(),
             overflow: TextOverflow.ellipsis,
-            maxLines: 1,
           ),
           actions: [
             GestureDetector(
-              child: Icon(CupertinoIcons.settings, color: Colors.white),
+              child: const Icon(CupertinoIcons.settings, color: Colors.white),
               onTap: () {
                 Navigator.pushNamed(context, Routes.profileSettings);
               },
@@ -47,8 +43,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             10.horizontalSpace,
           ],
         ),
+
+        // 🔥 Main Scroll Structure
         body: SafeArea(
           child: Container(
+            height: double.infinity,
+            width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -62,148 +62,109 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 stops: [0.0, 0.3, 0.7, 1.0],
               ),
             ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  10.verticalSpace,
-                  ProfileHeader(),
-                  10.verticalSpace,
-                  Text(
-                    'Biggest supporter of @creatorname',
-                    style: AppStyles.size12w400(),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SocialLinksButton(),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: PrimaryButton(
-                          label: 'Edit profile',
-                          height: 35.h,
-                          borderRadius: 5.0.r,
-                          backgroundColor: CupertinoColors.systemGrey.withAlpha(80),
-                          fontSize: 15,
-                          onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              Routes.editProfileRoute,
-                            );
-                          },
-                        ),
-                      ),
-                      5.horizontalSpace,
-                      Expanded(
-                        child: PrimaryButton(
-                          label: 'Share profile',
-                          height: 35.h,
-                          borderRadius: 5.0.r,
-                          backgroundColor: CupertinoColors.systemGrey.withAlpha(
-                            80,
+            child: NestedScrollView(
+              headerSliverBuilder: (context, innerBoxIsScrolled) {
+                return [
+                  /// ===== PROFILE HEADER =====
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          15.verticalSpace,
+                          ProfileHeader(),
+                          10.verticalSpace,
+                          Text(
+                            'Biggest supporter of @creatorname',
+                            style: AppStyles.size12w400(),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          fontSize: 15,
-                          onPressed: () {},
-                        ),
-                      ),
-                    ],
-                  ),
-                  10.verticalSpace,
-                  TabBar(
-                    dividerColor: CupertinoColors.transparent,
-                    indicatorColor: CupertinoColors.white,
-                    indicatorSize: TabBarIndicatorSize.tab,
-                    tabs: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          CupertinoIcons.square_grid_2x2_fill,
-                          color: CupertinoColors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          CupertinoIcons.play_rectangle_fill,
-                          color: CupertinoColors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          CupertinoIcons.lock_circle_fill,
-                          color: CupertinoColors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  10.verticalSpace,
+                          10.verticalSpace,
+                          SocialLinksButton(),
+                          10.verticalSpace,
 
-                  Expanded(
-                    child: TabBarView(
-                      children: [
-                        SizedBox(
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  AppImages.noPost1,
-                                  height: 200.h,
-                                  width: 200.w,
+                          /// ===== Buttons =====
+                          Row(
+                            children: [
+                              Expanded(
+                                child: PrimaryButton(
+                                  label: 'Edit profile',
+                                  height: 35.h,
+                                  borderRadius: 6.r,
+                                  backgroundColor: CupertinoColors.systemGrey
+                                      .withAlpha(80),
+                                  fontSize: 14.sp,
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                      context,
+                                      Routes.editProfileRoute,
+                                    );
+                                  },
                                 ),
-                                5.verticalSpace,
-                                Text(
-                                  'Create your first post',
-                                  style: AppStyles.size16w600(),
-                                ),
-                                5.verticalSpace,
-                                PrimaryButton(
-                                  label: 'Create',
-                                  borderRadius: 5.0.r,
-                                  height: 40,
-                                  width: 50,
-                                  fontSize: 15,
+                              ),
+                              8.horizontalSpace,
+                              Expanded(
+                                child: PrimaryButton(
+                                  label: 'Share profile',
+                                  height: 35.h,
+                                  borderRadius: 6.r,
+                                  backgroundColor: CupertinoColors.systemGrey
+                                      .withAlpha(80),
+                                  fontSize: 14.sp,
                                   onPressed: () {},
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ),
-                        SizedBox(
-                          child: Center(
-                            child: Image.asset(
-                              AppImages.noPost2,
-                              height: 250.h,
-                              width: 250.w,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          child: Center(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  CupertinoIcons.lock_circle_fill,
-                                  size: 100,
-                                  color: CupertinoColors.white,
-                                ),
-                                10.verticalSpace,
-                                Text(
-                                  'Private photos and videos',
-                                  style: AppStyles.size16w600(),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+                          15.verticalSpace,
+                        ],
+                      ),
                     ),
                   ),
-                ],
+
+                  /// ===== Sticky TabBar =====
+                  SliverPersistentHeader(
+                    pinned: true,
+                    delegate: _SliverTabBarDelegate(
+                      const TabBar(
+                        indicatorColor: Colors.white,
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        dividerColor: Colors.transparent,
+                        tabs: [
+                          Tab(
+                            icon: Icon(
+                              CupertinoIcons.square_grid_2x2_fill,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                          ),
+                          Tab(
+                            icon: Icon(
+                              CupertinoIcons.play_rectangle_fill,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                          ),
+                          Tab(
+                            icon: Icon(
+                              CupertinoIcons.lock_circle_fill,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ];
+              },
+
+              /// ===== Tab Views =====
+              body: const TabBarView(
+                dragStartBehavior: DragStartBehavior.down,
+                children: [PostsTab(), ReelsTab(), PrivateContent()],
               ),
             ),
           ),
@@ -211,4 +172,92 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+}
+
+/// ================= POSTS TAB =================
+class PostsTab extends StatelessWidget {
+  const PostsTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      padding: EdgeInsets.only(bottom: 5),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        mainAxisSpacing: 5,
+        crossAxisSpacing: 5,
+      ),
+      itemCount: 30,
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(AppImages.shopBanner),
+              fit: BoxFit.cover,
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+/// ================= REELS TAB =================
+class ReelsTab extends StatelessWidget {
+  const ReelsTab({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Image.asset(AppImages.noPost2, height: 250, width: 250),
+    );
+  }
+}
+
+/// ================= PRIVATE TAB =================
+class PrivateContent extends StatelessWidget {
+  const PrivateContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(
+            CupertinoIcons.lock_circle_fill,
+            size: 100,
+            color: Colors.white,
+          ),
+          const SizedBox(height: 10),
+          Text('Private photos and videos', style: AppStyles.size16w600()),
+        ],
+      ),
+    );
+  }
+}
+
+/// ================= Sticky Tab Delegate =================
+class _SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
+  final TabBar tabBar;
+
+  _SliverTabBarDelegate(this.tabBar);
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    return Container(color: const Color(0xFF1a1625), child: tabBar);
+  }
+
+  @override
+  double get maxExtent => tabBar.preferredSize.height;
+
+  @override
+  double get minExtent => tabBar.preferredSize.height;
+
+  @override
+  bool shouldRebuild(_SliverTabBarDelegate oldDelegate) => false;
 }

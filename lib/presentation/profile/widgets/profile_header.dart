@@ -50,7 +50,7 @@ class ProfileHeader extends StatelessWidget {
 
         15.horizontalSpace,
 
-        Expanded(
+        Flexible(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -58,14 +58,17 @@ class ProfileHeader extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    'MD Fahim',
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    style: AppStyles.size14w600(),
+                  Flexible(
+                    flex: 10,
+                    child: Text(
+                      'MD Fahim',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      style: AppStyles.size14w600(),
+                    ),
                   ),
                   5.horizontalSpace,
-                  Image.asset(AppIcons.blueCheck, height: 20, width: 20),
+                  Flexible(child: Image.asset(AppIcons.blueCheck, height: 20, width: 20)),
                 ],
               ),
               5.verticalSpace,

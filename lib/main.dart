@@ -6,9 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(
+    ProviderScope(
+      child: const MyApp(),
+    ),
+  );
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

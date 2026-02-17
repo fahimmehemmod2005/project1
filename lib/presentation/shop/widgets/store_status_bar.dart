@@ -10,8 +10,8 @@ class StoreStatusBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90.h,
-      width: 100.w,
+      height: 80.h,
+      width: 90.w,
       decoration: BoxDecoration(
         border: Border.all(
           color: CupertinoColors.systemPurple,

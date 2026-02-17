@@ -73,17 +73,22 @@ class _SearchUserProfileState extends State<SearchUserProfile> {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    'Aryan',
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                    style: AppStyles.size14w600(),
+                                  Flexible(
+                                    flex: 10,
+                                    child: Text(
+                                      'Aryan',
+                                      overflow: TextOverflow.ellipsis,
+                                      maxLines: 1,
+                                      style: AppStyles.size14w600(),
+                                    ),
                                   ),
                                   5.horizontalSpace,
-                                  Image.asset(
-                                    AppIcons.blueCheck,
-                                    height: 20,
-                                    width: 20,
+                                  Flexible(
+                                    child: Image.asset(
+                                      AppIcons.blueCheck,
+                                      height: 20,
+                                      width: 20,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -152,18 +157,18 @@ class _SearchUserProfileState extends State<SearchUserProfile> {
 
                   Row(
                     children: [
-                      Expanded(
+                      Flexible(
                         child: PrimaryButton(
                           label: 'Subscribe',
                           height: 35.h,
                           borderRadius: 5.0.r,
                           backgroundColor: CupertinoColors.systemPurple,
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           onPressed: () {},
                         ),
                       ),
                       5.horizontalSpace,
-                      Expanded(
+                      Flexible(
                         child: PrimaryButton(
                           label: 'Message',
                           height: 35.h,
@@ -171,7 +176,7 @@ class _SearchUserProfileState extends State<SearchUserProfile> {
                           backgroundColor: CupertinoColors.systemGrey.withAlpha(
                             80,
                           ),
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           onPressed: () {},
                         ),
                       ),
@@ -187,6 +192,7 @@ class _SearchUserProfileState extends State<SearchUserProfile> {
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(
                           CupertinoIcons.square_grid_2x2_fill,
+                          size: 20,
                           color: CupertinoColors.white,
                         ),
                       ),
@@ -194,6 +200,7 @@ class _SearchUserProfileState extends State<SearchUserProfile> {
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(
                           CupertinoIcons.play_rectangle_fill,
+                          size: 20,
                           color: CupertinoColors.white,
                         ),
                       ),
@@ -201,6 +208,7 @@ class _SearchUserProfileState extends State<SearchUserProfile> {
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(
                           CupertinoIcons.lock_circle_fill,
+                          size: 20,
                           color: CupertinoColors.white,
                         ),
                       ),
@@ -208,7 +216,7 @@ class _SearchUserProfileState extends State<SearchUserProfile> {
                   ),
                   10.verticalSpace,
 
-                  Expanded(
+                  Flexible(
                     child: TabBarView(
                       
                       children: [

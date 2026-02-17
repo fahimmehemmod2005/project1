@@ -50,7 +50,9 @@ class _MessageScreenState extends State<MessageScreen> {
                   return OnlineCard(
                     image: AppImages.user6,
                     name: 'ayan12',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.chatRoute);
+                    },
                   );
                 },
               ),

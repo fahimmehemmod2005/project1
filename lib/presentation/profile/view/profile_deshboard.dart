@@ -36,8 +36,9 @@ class _ProfileDeshboardState extends State<ProfileDeshboard> {
             children: [
               Text('Your activity overview', style: AppStyles.size14w600()),
               10.verticalSpace,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Wrap(
+                spacing: 10,
+                runSpacing: 10,
                 children: [
                   StoreStatusBar(
                     child: Column(
@@ -69,12 +70,6 @@ class _ProfileDeshboardState extends State<ProfileDeshboard> {
                       ],
                     ),
                   ),
-                ],
-              ),
-              10.verticalSpace,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
                   StoreStatusBar(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +102,7 @@ class _ProfileDeshboardState extends State<ProfileDeshboard> {
                   ),
                 ],
               ),
-              20.verticalSpace,
+              10.verticalSpace,
               Text('DM Usage Tracker', style: AppStyles.size14w600()),
               10.verticalSpace,
               Container(

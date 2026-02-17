@@ -38,9 +38,9 @@ class _PublicStoresState extends State<PublicStores> {
               ),
             ),
             5.horizontalSpace,
-            Text('Poma', style: AppStyles.size14w600()),
+            Flexible(child: Text('Poma', style: AppStyles.size14w600(),overflow: TextOverflow.ellipsis,maxLines: 1,)),
             5.horizontalSpace,
-            Image.asset(AppIcons.blueCheck, height: 10.h, width: 10.w),
+            Flexible(child: Image.asset(AppIcons.blueCheck, height: 10.h, width: 10.w)),
           ],
         ),
         actions: [
@@ -52,8 +52,7 @@ class _PublicStoresState extends State<PublicStores> {
                 side: BorderSide(color: CupertinoColors.systemPurple),
               ),
             ),
-            onPressed: () {
-            },
+            onPressed: () {},
             child: Text('Follow', style: AppStyles.size12w400()),
           ),
           10.horizontalSpace,
@@ -77,15 +76,16 @@ class _PublicStoresState extends State<PublicStores> {
             10.verticalSpace,
             Text('Store Overview', style: AppStyles.size14w600()),
             10.verticalSpace,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Wrap(
+              runSpacing: 10,
+              spacing: 10,
               children: [
                 StoreStatusBar(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('24', style: AppStyles.size16w700()),
+                      Text('24', style: AppStyles.size14w400()),
                       Text('Products', style: AppStyles.size14w400()),
                       Text('Active', style: AppStyles.size14w400()),
                     ],
@@ -96,7 +96,7 @@ class _PublicStoresState extends State<PublicStores> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('\$24000', style: AppStyles.size16w700()),
+                      Text('\$24000', style: AppStyles.size14w400()),
                       Text('Sales', style: AppStyles.size14w400()),
                       Text('This Month', style: AppStyles.size14w400()),
                     ],
@@ -107,24 +107,18 @@ class _PublicStoresState extends State<PublicStores> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('165', style: AppStyles.size16w700()),
+                      Text('165', style: AppStyles.size14w400()),
                       Text('Orders', style: AppStyles.size14w400()),
                       Text('Pending', style: AppStyles.size14w400()),
                     ],
                   ),
                 ),
-              ],
-            ),
-            10.verticalSpace,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
                 StoreStatusBar(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('24', style: AppStyles.size16w700()),
+                      Text('24', style: AppStyles.size14w400()),
                       Text('Products', style: AppStyles.size14w400()),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,7 +138,7 @@ class _PublicStoresState extends State<PublicStores> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('892', style: AppStyles.size16w700()),
+                      Text('892', style: AppStyles.size14w400()),
                       Text('Reviews', style: AppStyles.size14w400()),
                       Text('Total', style: AppStyles.size14w400()),
                     ],
@@ -155,7 +149,7 @@ class _PublicStoresState extends State<PublicStores> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('12', style: AppStyles.size16w700()),
+                      Text('12', style: AppStyles.size14w400()),
                       Text('Out of', style: AppStyles.size14w400()),
                       Text('Stock', style: AppStyles.size14w400()),
                     ],

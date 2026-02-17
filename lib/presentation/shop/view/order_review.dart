@@ -180,6 +180,16 @@ class _OrderReviewState extends State<OrderReview> {
                             titleTextStyle: AppStyles.size12w400(),
                           ),
                         ),
+                         ListTile(
+                          leading: Image.asset(
+                            AppIcons.credit,
+                            height: 30.h,
+                            width: 30.w,
+                            color: Colors.white,
+                          ),
+                          title: Text('Credit'),
+                          titleTextStyle: AppStyles.size12w400(),
+                        ),
                         ListTile(
                           leading: Image.asset(
                             AppIcons.master,
@@ -189,6 +199,7 @@ class _OrderReviewState extends State<OrderReview> {
                           title: Text('Master'),
                           titleTextStyle: AppStyles.size12w400(),
                         ),
+                       
                         ListTile(
                           leading: Image.asset(
                             AppIcons.visa,

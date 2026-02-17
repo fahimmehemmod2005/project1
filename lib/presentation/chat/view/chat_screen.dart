@@ -39,14 +39,17 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
           
               5.horizontalSpace,
-              Text(
-                'Aryan Das',
-                style: AppStyles.size16w600(),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+              Flexible(
+                flex: 10,
+                child: Text(
+                  'Aryan Das',
+                  style: AppStyles.size16w600(),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               5.horizontalSpace,
-              Image.asset(AppIcons.blueCheck, height: 15.h, width: 15.w),
+              Flexible(child: Image.asset(AppIcons.blueCheck, height: 15.h, width: 15.w)),
             ],
           ),
         ),

@@ -18,7 +18,8 @@ class ChatCard extends StatelessWidget {
     this.subTitle,
     this.date,
     this.onTap,
-    this.onLongTap, this.showBadge = true,
+    this.onLongTap,
+    this.showBadge = true,
   });
 
   @override
@@ -45,20 +46,27 @@ class ChatCard extends StatelessWidget {
                   ),
                 ),
                 10.horizontalSpace,
-                Expanded(
+                Flexible(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                          Text(title ?? '', style: AppStyles.size14w400()),
-                        5.horizontalSpace,
-                        if(showBadge)
-                Image.asset(
-                  AppIcons.blueCheck,
-                  height: 15.h,
-                  width: 15.w,
-                ),
+                          Flexible(
+                            child: Text(title ?? '', style: AppStyles.size14w400(),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          5.horizontalSpace,
+                          if (showBadge)
+                            Flexible(
+                              child: Image.asset(
+                                AppIcons.blueCheck,
+                                height: 15.h,
+                                width: 15.w,
+                              ),
+                            ),
                         ],
                       ),
                       Row(

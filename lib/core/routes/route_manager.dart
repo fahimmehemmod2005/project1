@@ -18,6 +18,8 @@ import 'package:flutter_application_1/presentation/mainscreen/view/main_screen.d
 import 'package:flutter_application_1/presentation/notification/view/notification_screen.dart';
 import 'package:flutter_application_1/presentation/profile/view/edit_profile.dart';
 import 'package:flutter_application_1/presentation/boardcast/view/broadcast_channel.dart';
+import 'package:flutter_application_1/presentation/profile/view/account_management.dart';
+import 'package:flutter_application_1/presentation/profile/view/privacy_settings.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_deshboard.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_screen.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_settings.dart';
@@ -97,6 +99,8 @@ class Routes {
   static const String shopDeshboard = "/shopDeshboard";
   static const String profileDeshboard = "/profileDeshboard";
   static const String createGroup = "/createGroup";
+  static const String accountManagement = "/accountManagement";
+  static const String privarySettings = "/privarySettings";
 }
 
 class RouteGenerator {
@@ -198,7 +202,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const ProfileDeshboard());
       case Routes.createGroup:
         return MaterialPageRoute(builder: (_) => const CreateGroup());
-      
+      case Routes.accountManagement:
+        return MaterialPageRoute(builder: (_) => const AccountManagement());
+      case Routes.privarySettings:
+        return MaterialPageRoute(builder: (_) => const PrivacySettings());
 
       default:
         return unDefineRoute();

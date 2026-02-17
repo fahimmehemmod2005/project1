@@ -4,6 +4,7 @@ import 'package:flutter_application_1/core/constansts/app_icons.dart';
 import 'package:flutter_application_1/core/constansts/app_images.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class GroupChat extends StatefulWidget {
   const GroupChat({super.key});
 
@@ -32,7 +33,8 @@ class _GroupChatState extends State<GroupChat> {
               ),
             ),
             5.horizontalSpace,
-            Expanded(
+            Flexible(
+              flex: 10,
               child: Text(
                 'Friends entertainment group',
                 style: AppStyles.size16w600(),
@@ -45,11 +47,7 @@ class _GroupChatState extends State<GroupChat> {
         actions: [
           TextButton(
             onPressed: () {},
-            child: Icon(
-              CupertinoIcons.bars,
-              size: 35,
-              color: Colors.white,
-            ),
+            child: Icon(CupertinoIcons.bars, size: 35, color: Colors.white),
           ),
         ],
       ),
@@ -159,7 +157,7 @@ class _GroupChatState extends State<GroupChat> {
                         ],
                       ),
                       10.verticalSpace,
-                       Row(
+                      Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Container(
@@ -236,11 +234,19 @@ class _GroupChatState extends State<GroupChat> {
                       onPressed: () {},
                     ),
                     IconButton(
-                      icon: Icon(CupertinoIcons.mic, size: 24, color: Colors.white),
+                      icon: Icon(
+                        CupertinoIcons.mic,
+                        size: 24,
+                        color: Colors.white,
+                      ),
                       onPressed: () {},
                     ),
                     IconButton(
-                      icon: Icon(CupertinoIcons.paperplane, size: 24, color: Colors.white),
+                      icon: Icon(
+                        CupertinoIcons.paperplane,
+                        size: 24,
+                        color: Colors.white,
+                      ),
                       onPressed: () {},
                     ),
                   ],

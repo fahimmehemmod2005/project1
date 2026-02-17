@@ -30,7 +30,7 @@ class ItemCard extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: 140.h,
+                    height: 100.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: const Color(0xff20272C),
@@ -82,7 +82,6 @@ class ItemCard extends StatelessWidget {
                 ],
               ),
 
-              10.verticalSpace,
 
               Text(
                 'Blue Winter Shirt',
@@ -90,9 +89,6 @@ class ItemCard extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-
-              4.verticalSpace,
-
               Row(
                 children: [
                   Text(
@@ -105,9 +101,6 @@ class ItemCard extends StatelessWidget {
                   Image.asset(AppIcons.blueCheck, height: 12.h),
                 ],
               ),
-
-              8.verticalSpace,
-
               Row(
                 children: [
                   Text('\$240', style: AppStyles.size16w600()),
@@ -122,9 +115,6 @@ class ItemCard extends StatelessWidget {
                   ),
                 ],
               ),
-
-              const Spacer(),
-
               Row(
                 children: [
                   Expanded(

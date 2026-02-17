@@ -70,7 +70,7 @@ class _MembershipScreenState extends State<MembershipScreen> {
                     ),
                   ),
                   20.verticalSpace,
-                  Expanded(
+                  Flexible(
                     child: TabBarView(
                       children: [
                         Free(), 

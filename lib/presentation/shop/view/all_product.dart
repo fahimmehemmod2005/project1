@@ -88,7 +88,7 @@ class _AllProductState extends State<AllProduct> {
                           crossAxisCount: 2,
                           mainAxisSpacing: 15.w,
                           crossAxisSpacing: 15.w,
-                          childAspectRatio: 0.56,
+                          childAspectRatio: 0.60,
                         ),
                         itemBuilder: (context, index) {
                           return ItemCard(image: AppImages.shirtRed);
@@ -103,7 +103,7 @@ class _AllProductState extends State<AllProduct> {
                           crossAxisCount: 2,
                           mainAxisSpacing: 15.w,
                           crossAxisSpacing: 15.w,
-                          childAspectRatio: 0.56,
+                          childAspectRatio: 0.60,
                         ),
                         itemBuilder: (context, index) {
                           return ItemCard(image: AppImages.shirt);
