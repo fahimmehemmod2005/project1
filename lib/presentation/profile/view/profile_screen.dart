@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/constansts/app_images.dart';
 import 'package:flutter_application_1/core/resource/app_styles.dart';
 import 'package:flutter_application_1/core/routes/route_manager.dart';
+import 'package:flutter_application_1/presentation/profile/widgets/profile_features_widgets.dart';
 import 'package:flutter_application_1/presentation/profile/widgets/profile_header.dart';
 import 'package:flutter_application_1/presentation/profile/widgets/social_links_button.dart';
 import 'package:flutter_application_1/presentation/widgets/primary_button.dart';
@@ -28,6 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen>
         appBar: AppBar(
           backgroundColor: const Color(0xFF1a1625),
           centerTitle: true,
+          leading: ProfileFeaturesWidget(),
           title: Text(
             'fahim2005',
             style: AppStyles.size16w600(),
