@@ -16,9 +16,11 @@ import 'package:flutter_application_1/presentation/chat/view/message_screen.dart
 import 'package:flutter_application_1/presentation/home/view/home_screen.dart';
 import 'package:flutter_application_1/presentation/mainscreen/view/main_screen.dart';
 import 'package:flutter_application_1/presentation/notification/view/notification_screen.dart';
+import 'package:flutter_application_1/presentation/profile/view/address_screen.dart';
 import 'package:flutter_application_1/presentation/profile/view/edit_profile.dart';
 import 'package:flutter_application_1/presentation/boardcast/view/broadcast_channel.dart';
 import 'package:flutter_application_1/presentation/profile/view/account_management.dart';
+import 'package:flutter_application_1/presentation/profile/view/invoice_screen.dart';
 import 'package:flutter_application_1/presentation/profile/view/privacy_settings.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_deshboard.dart';
 import 'package:flutter_application_1/presentation/profile/view/profile_screen.dart';
@@ -101,6 +103,8 @@ class Routes {
   static const String createGroup = "/createGroup";
   static const String accountManagement = "/accountManagement";
   static const String privarySettings = "/privarySettings";
+  static const String addressScreen = "/addressScreen";
+  static const String invoiceScreen = "/invoiceScreen";
 }
 
 class RouteGenerator {
@@ -206,6 +210,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const AccountManagement());
       case Routes.privarySettings:
         return MaterialPageRoute(builder: (_) => const PrivacySettings());
+      case Routes.addressScreen:
+        return MaterialPageRoute(builder: (_) => const AddressScreen());
+      case Routes.invoiceScreen:
+        return MaterialPageRoute(builder: (_) => const InvoiceScreen());
 
       default:
         return unDefineRoute();

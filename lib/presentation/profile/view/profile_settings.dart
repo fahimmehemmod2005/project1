@@ -37,25 +37,29 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 title: 'Privacy Settings',
                 preffixIcon: CupertinoIcons.shield_fill,
                 onTap: () {
-                 Navigator.pushNamed(context, Routes.privarySettings);
+                  Navigator.pushNamed(context, Routes.privarySettings);
                 },
               ),
               SettingsCard(
                 title: 'Payment and Invoice',
                 preffixIcon: CupertinoIcons.creditcard_fill,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.invoiceScreen);
+                },
               ),
               SettingsCard(
                 title: 'Account Management',
                 preffixIcon: CupertinoIcons.settings,
                 onTap: () {
-                    Navigator.pushNamed(context, Routes.accountManagement);
+                  Navigator.pushNamed(context, Routes.accountManagement);
                 },
               ),
               SettingsCard(
                 title: 'Address',
                 preffixIcon: CupertinoIcons.location_circle,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.addressScreen);
+                },
               ),
               SettingsCard(
                 title: 'Manage Subscription',
@@ -136,12 +140,7 @@ class SettingsCard extends StatelessWidget {
   final String? title;
   final IconData? preffixIcon;
   final void Function()? onTap;
-  const SettingsCard({
-    super.key,
-     this.title,
-     this.preffixIcon,
-     this.onTap,
-  });
+  const SettingsCard({super.key, this.title, this.preffixIcon, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -151,8 +150,8 @@ class SettingsCard extends StatelessWidget {
         leading: Icon(preffixIcon, size: 20.0),
         title: Text(title ?? ''),
         titleTextStyle: AppStyles.size12w400(),
-        
-        trailing:Icon(CupertinoIcons.chevron_right, size: 20.0),
+
+        trailing: Icon(CupertinoIcons.chevron_right, size: 20.0),
       ),
     );
   }

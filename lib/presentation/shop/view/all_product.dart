@@ -154,6 +154,7 @@ class _AllProductState extends State<AllProduct> {
                       title: Text('Orders', style: AppStyles.size12w400()),
                       trailing: Icon(Icons.shopping_bag_outlined),
                       onTap: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(context, Routes.orderScreen);
                       },
                     ),
@@ -171,6 +172,7 @@ class _AllProductState extends State<AllProduct> {
                       ),
                       trailing: Icon(Icons.alarm),
                       onTap: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(context, Routes.pendingProduct);
                       },
                     ),
@@ -188,6 +190,7 @@ class _AllProductState extends State<AllProduct> {
                       ),
                       trailing: Icon(Icons.download_done_rounded),
                       onTap: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(context, Routes.completeDelevery);
                       },
                     ),
@@ -202,6 +205,7 @@ class _AllProductState extends State<AllProduct> {
                       title: Text('Deshboard', style: AppStyles.size12w400()),
                       trailing: Icon(Icons.dashboard),
                       onTap: () {
+                        Navigator.pop(context);
                         Navigator.pushNamed(context, Routes.shopDeshboard);
                       },
                     ),
