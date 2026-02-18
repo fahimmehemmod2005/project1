@@ -96,6 +96,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
                                 ),
                               ],
                             ),
+                            
                             Text(
                               'Blue shoes of nikee',
                               style: AppStyles.size14w400(),
