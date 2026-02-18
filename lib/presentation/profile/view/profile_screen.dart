@@ -44,7 +44,6 @@ class _ProfileScreenState extends State<ProfileScreen>
           ],
         ),
 
-        // 🔥 Main Scroll Structure
         body: SafeArea(
           child: Container(
             height: double.infinity,
@@ -85,7 +84,6 @@ class _ProfileScreenState extends State<ProfileScreen>
                           SocialLinksButton(),
                           10.verticalSpace,
 
-                          /// ===== Buttons =====
                           Row(
                             children: [
                               Expanded(
@@ -124,7 +122,6 @@ class _ProfileScreenState extends State<ProfileScreen>
                     ),
                   ),
 
-                  /// ===== Sticky TabBar =====
                   SliverPersistentHeader(
                     pinned: true,
                     delegate: _SliverTabBarDelegate(
@@ -161,7 +158,6 @@ class _ProfileScreenState extends State<ProfileScreen>
                 ];
               },
 
-              /// ===== Tab Views =====
               body: const TabBarView(
                 dragStartBehavior: DragStartBehavior.down,
                 children: [PostsTab(), ReelsTab(), PrivateContent()],
@@ -174,7 +170,6 @@ class _ProfileScreenState extends State<ProfileScreen>
   }
 }
 
-/// ================= POSTS TAB =================
 class PostsTab extends StatelessWidget {
   const PostsTab({super.key});
 
@@ -202,7 +197,6 @@ class PostsTab extends StatelessWidget {
   }
 }
 
-/// ================= REELS TAB =================
 class ReelsTab extends StatelessWidget {
   const ReelsTab({super.key});
 
@@ -214,7 +208,6 @@ class ReelsTab extends StatelessWidget {
   }
 }
 
-/// ================= PRIVATE TAB =================
 class PrivateContent extends StatelessWidget {
   const PrivateContent({super.key});
 
@@ -237,7 +230,6 @@ class PrivateContent extends StatelessWidget {
   }
 }
 
-/// ================= Sticky Tab Delegate =================
 class _SliverTabBarDelegate extends SliverPersistentHeaderDelegate {
   final TabBar tabBar;
 
