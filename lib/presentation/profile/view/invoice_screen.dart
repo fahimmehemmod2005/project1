@@ -96,7 +96,6 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
                                 ),
                               ],
                             ),
-                            
                             Text(
                               'Blue shoes of nikee',
                               style: AppStyles.size14w400(),
@@ -109,7 +108,14 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
                           ],
                         ),
                       ),
-                      Expanded(flex: 3,child: Text('3',style: AppStyles.size14w400(),overflow: TextOverflow.ellipsis,))
+                      Expanded(
+                        flex: 3,
+                        child: Text(
+                          '3',
+                          style: AppStyles.size14w400(),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                     ],
                   ),
                 );
